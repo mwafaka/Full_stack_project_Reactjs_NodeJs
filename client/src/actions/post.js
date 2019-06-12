@@ -20,10 +20,10 @@ export const getPosts = () => async dispatch => {
       type: GET_POSTS,
       payload: res.data
     });
-  } catch (err) {
+  } catch (error) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
+      payload: { msg: error.response.statusText, status: error.response.status }
     });
   }
 };
