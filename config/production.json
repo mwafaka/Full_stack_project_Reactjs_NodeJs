@@ -1,6 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://mernAppDci:mernAppDci@cluster0-vtewj.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken",
-  "githubClientId": "4fdd1f270345564b597c",
-  "githubSecret": "e44fefdba69a470818e6ec19d1586fa6a7580a7a"
-}
