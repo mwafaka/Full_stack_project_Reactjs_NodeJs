@@ -29,7 +29,7 @@ router.post(
       const newPost = new Post({
         text: req.body.text,
         name: user.name,
-        avatar: user.avatar,
+        imageUrl: user.imageUrl,
         user: req.user.id
       });
       const post = await newPost.save();
@@ -170,7 +170,7 @@ router.post(
       const newComment = {
         text: req.body.text,
         name: user.name,
-        avatar: user.avatar,
+        imageUrl: user.imageUrl,
         user: req.user.id
       };
       post.comments.unshift(newComment);
@@ -198,7 +198,7 @@ router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
       return res.status(404).json({ msg: "Comment does not exist " });
     }
     // Check user
-    
+
     if (comment.user.toString() !== req.user.id) {
       return res.status(401).json({ msg: "User not authorized" });
     }
