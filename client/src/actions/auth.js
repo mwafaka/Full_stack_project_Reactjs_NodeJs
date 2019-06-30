@@ -14,15 +14,22 @@ import setAuthToken from "../utils/setAuthToken";
 
 // Load User
 export const loadUser = () => async dispatch => {
-  if (localStorage.token) {
-    setAuthToken(localStorage.token);
-  }
   try {
-    const res = await axios.get("/api/auth");
-    dispatch({
-      type: USER_LOADED,
-      payload: res.data
-    });
+    if (localStorage.token) {
+      const config = {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": localStorage.token
+        }
+      };
+      setAuthToken(localStorage.token);
+      const res = await axios.get("/api/auth", config);
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data
+      });
+    }
   } catch (error) {
     dispatch({
       type: AUTH_ERROR

@@ -43,6 +43,13 @@ img {
   margin-bottom: 3rem;
 }
 
+/*  Map style*/
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+  position: absolute;
+}
+
 /* Text Styles*/
 .x-large {
   font-size: 4rem;
@@ -304,7 +311,7 @@ button {
   align-items: center;
   padding: 0.7rem 2rem;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   top: 0;
   /* border-bottom: solid 1px var(--primary-color); */
@@ -322,7 +329,7 @@ button {
 }
 
 .navbar a:hover {
-  color: var(--primary-color);
+  color: var(--danger-color);
 }
 
 .navbar .welcome span {
@@ -350,6 +357,7 @@ button {
 
 /* Profiles Page */
 .profile {
+  z-index: 1;
   display: grid;
   grid-template-columns: 2fr 4fr 2fr;
   align-items: center;
@@ -357,6 +365,7 @@ button {
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  border-radius: 50px 20px;
 }
 
 /* Profile Page */

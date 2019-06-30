@@ -8,7 +8,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-        <Link to="/profiles">Developers</Link>
+        <Link to="/profiles">Shops</Link>
       </li>
       <li>
         <Link to="/posts">Posts</Link>
@@ -44,7 +44,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className="navbar bg-dark">
       <h1>
         <Link to="/">
-          <i class="fa fa-map-signs" aria-hidden="true" /> Found In Berlin
+          <i className="fa fa-map-signs " aria-hidden="true" /> Found In Berlin
         </Link>
       </h1>
       {!loading && (

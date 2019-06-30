@@ -2,18 +2,17 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { createProfile, getCurrentProfile } from "../../actions/profile";
+import { updateProfile, getCurrentProfile } from "../../actions/profile";
 
 const EditProfile = ({
   profile: { profile, loading },
-  createProfile,
+  updateProfile,
   history,
   getCurrentProfile
 }) => {
   const [formData, setFormData] = useState({
     company: "",
     website: "",
-    location: "",
     status: "",
     skills: "",
     githubusername: "",
@@ -27,7 +26,6 @@ const EditProfile = ({
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
   useEffect(() => {
     getCurrentProfile();
-
     setFormData({
       company: loading || !profile.company ? "" : profile.company,
       website: loading || !profile.website ? "" : profile.website,
@@ -48,7 +46,7 @@ const EditProfile = ({
   const {
     company,
     website,
-    location,
+
     status,
     skills,
     githubusername,
@@ -63,8 +61,9 @@ const EditProfile = ({
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
+    alert("sumbmited");
     e.preventDefault();
-    createProfile(formData, history, true);
+    updateProfile(formData, history, true);
   };
   return (
     <Fragment>
@@ -115,22 +114,11 @@ const EditProfile = ({
             Could be your own or a company website
           </small>
         </div>
+
         <div className="form-group">
           <input
             type="text"
-            placeholder="Location"
-            name="location"
-            value={location}
-            onChange={e => onChange(e)}
-          />
-          <small className="form-text">
-            City & state suggested (eg. Boston, MA)
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="* Skills"
+            placeholder="* skills"
             name="skills"
             value={skills}
             onChange={e => onChange(e)}
@@ -139,19 +127,18 @@ const EditProfile = ({
             Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
           </small>
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <input
             type="text"
             placeholder="Github Username"
             name="githubusername"
             value={githubusername}
             onChange={e => onChange(e)}
-          />
-          <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
-          </small>
-        </div>
+          /> */}
+        <small className="form-text">
+          If you want your latest repos and a Github link, include your username
+        </small>
+
         <div className="form-group">
           <textarea
             placeholder="A short bio of yourself"
@@ -208,7 +195,7 @@ const EditProfile = ({
               />
             </div>
 
-            <div className="form-group social-input">
+            {/* <div className="form-group social-input">
               <i className="fab fa-linkedin fa-2x" />
               <input
                 type="text"
@@ -217,7 +204,7 @@ const EditProfile = ({
                 value={linkedin}
                 onChange={e => onChange(e)}
               />
-            </div>
+            </div> */}
 
             <div className="form-group social-input">
               <i className="fab fa-instagram fa-2x" />
@@ -242,7 +229,7 @@ const EditProfile = ({
 };
 
 EditProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired,
+  updateProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
@@ -251,5 +238,5 @@ const mapStateToProps = state => ({
 });
 export default connect(
   mapStateToProps,
-  { createProfile, getCurrentProfile }
+  { updateProfile, getCurrentProfile }
 )(withRouter(EditProfile));

@@ -4,8 +4,8 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import { deleteExperience } from "../../actions/profile";
 
-const Experience = ({ experience, deleteExperience }) => {
-  const experiences = experience.map(exp => (
+const Experience = ({ about, deleteExperience }) => {
+  const aboutProfile = about.map(exp => (
     <tr key={exp._id}>
       <td>{exp.company}</td>
       <td className="hide-sm">{exp.title}</td>
@@ -39,14 +39,14 @@ const Experience = ({ experience, deleteExperience }) => {
             <th />
           </tr>
         </thead>
-        <tbody>{experiences}</tbody>
+        <tbody>{aboutProfile}</tbody>
       </table>
     </Fragment>
   );
 };
 
 Experience.propTypes = {
-  experience: PropTypes.array.isRequired,
+  about: PropTypes.array.isRequired,
   deleteExperience: PropTypes.func.isRequired
 };
 

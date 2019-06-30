@@ -88,10 +88,7 @@ router.delete("/:id", auth, async (req, res) => {
 
     res.json({ msg: "Post removed" });
   } catch (error) {
-    console.error(error.message);
-    if (error.kind == "ObjectId") {
-      return res.status(404).json({ msg: "Post not found " });
-    }
+   
     if (error.kind == "ObjectId") {
       return res.status(404).json({ msg: "Post not found " });
     }

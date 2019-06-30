@@ -12,7 +12,8 @@ const Landing = ({ isAuthenticated }) => {
       <div className="dark-overlay">
         <div className="landing-inner">
           <h1 className="x-large">
-            <i class="fa fa-eye" aria-hidden="true">
+            <i class="fa fa-map-signs" aria-hidden="true">
+              {" "}
               Found In Berlin
             </i>{" "}
           </h1>

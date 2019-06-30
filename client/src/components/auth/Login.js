@@ -23,7 +23,7 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       {" "}
-      <h1 className="large text-primary">Sign In</h1>
+      <h1 className="large text-dark">Sign In</h1>
       <p className="lead">
         <i className="fas fa-user" /> Sign Into Your Account
       </p>
@@ -49,7 +49,7 @@ const Login = ({ login, isAuthenticated }) => {
           />
         </div>
 
-        <input type="submit" className="btn btn-primary" value="Login" />
+        <input type="submit" className="btn btn-danger" value="Login" />
       </form>
       <p className="my-1">
         Dont't have an account? <Link to="/register">Sign Up</Link>

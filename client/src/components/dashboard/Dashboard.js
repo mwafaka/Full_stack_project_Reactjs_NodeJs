@@ -10,8 +10,9 @@ import Education from "./Education";
 const Dashboard = ({
   getCurrentProfile,
   deleteAccount,
-  auth: { user },
-  profile: { profile, loading }
+  auth,
+  loading,
+  profile
 }) => {
   useEffect(() => {
     getCurrentProfile();
@@ -23,13 +24,16 @@ const Dashboard = ({
     <Fragment>
       <h1 className="large text-primary">Dashboard</h1>
       <p className="lead">
-        <i className="fas fa-user" /> Welcome {user && user.name}
+        <i className="fas fa-user" /> Welcome {auth.user && auth.user.name}
       </p>
-      {profile !== null ? (
+      {profile ? (
         <Fragment>
           <DashboardActions />
-          <Experience experience={profile.experience} />
-          <Education education={profile.education} />
+          {profile && profile.about && <Experience about={profile.about} />}
+          {profile && profile.education && (
+            <Education education={profile.education} />
+          )}
+
           <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i
@@ -56,11 +60,13 @@ Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
+  loading: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
   auth: state.auth,
-  profile: state.profile
+  loading: state.profile.loading,
+  profile: state.profile.profile
 });
 export default connect(
   mapStateToProps,

@@ -13,18 +13,28 @@ import {
 
 // Get current users profile
 export const getCurrentProfile = () => async dispatch => {
-  dispatch({ type: CLEAR_PROFILE });
+  // dispatch({ type: CLEAR_PROFILE });
   try {
-    const res = await axios.get("/api/profile/me");
+    const config = {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": localStorage.token
+      }
+    };
+
+    const res = await axios.get("/api/profile/me", config);
 
     dispatch({
       type: GET_PROFILE,
       payload: res.data
     });
   } catch (error) {
+    // alert("profile error" + JSON.stringify(error));
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.response.statusText, status: error.response.status }
+      // payload: { msg: error.response.statusText, status: error.response.status }
+      payload: { msg: error.response, status: error.response }
     });
   }
 };
@@ -41,7 +51,7 @@ export const getProfiles = () => async dispatch => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.response.statusText, status: error.response.status }
+      payload: { msg: error.response, status: error.response }
     });
   }
 };
@@ -57,7 +67,10 @@ export const getProfileById = userId => async dispatch => {
   } catch (error) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.response.statusText, status: error.response.status }
+      payload: {
+        msg: "profile error please check your backend",
+        status: "profile error please check your backend"
+      }
     });
   }
 };
@@ -78,21 +91,62 @@ export const getGithubRepos = username => async dispatch => {
     });
   }
 };
-// Create or update profile
+
+// Create profile
 export const createProfile = (
-  formData,
+  data,
   history,
   edit = false
 ) => async dispatch => {
   try {
     const config = {
+      withCredentials: true,
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "x-auth-token": localStorage.token
       }
     };
-    const res = await axios.post("/api/profile", formData, config);
+
+    const res = await axios.post("/api/profile", data, config);
+
     dispatch({
       type: GET_PROFILE,
+      payload: res.data
+    });
+    dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "success"));
+    if (!edit) {
+      history.push("/dashboard");
+    }
+  } catch (error) {
+    const errors = error.response.data.errors;
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    }
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: error.response.statusText, status: error.response.status }
+    });
+  }
+};
+// Update profile
+export const updateProfile = (
+  data,
+  history,
+  edit = false
+) => async dispatch => {
+  try {
+    const config = {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": localStorage.token
+      }
+    };
+
+    const res = await axios.put("/api/profile/update", data, config);
+
+    dispatch({
+      type: UPDATE_PROFILE,
       payload: res.data
     });
     dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "success"));

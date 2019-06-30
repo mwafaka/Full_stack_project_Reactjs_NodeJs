@@ -16,7 +16,7 @@ const ProfileAbout = ({
         <div class="line" />
       </Fragment>
     )}
-    <h2 class="text-dark">Branches</h2>
+    <h2 class="text-dark">Skills</h2>
     <div class="skills">
       {skills.map((skill, index) => (
         <div key={index} className="p-1">
