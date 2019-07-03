@@ -107,7 +107,7 @@ export const createProfile = (
       }
     };
 
-    const res = await axios.post("/api/profile", data, config);
+    const res = await axios.post("api/profile", data, config);
 
     dispatch({
       type: GET_PROFILE,
@@ -144,7 +144,7 @@ export const updateProfile = (
     };
 
     const res = await axios.put("/api/profile/update", data, config);
-
+    console.log(res.data);
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data

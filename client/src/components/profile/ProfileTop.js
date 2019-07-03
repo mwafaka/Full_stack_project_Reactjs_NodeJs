@@ -12,13 +12,13 @@ const ProfileTop = ({
   }
 }) => {
   return (
-    <div className="profile-top bg-dark p-2">
+    <div className="profile-top bg-light  p-2 text-dark">
       <img className="bg-cover " src={avatar} alt="" />
-      <h1 className="large">{name}</h1>
+      <h1 className="large ">{name}</h1>
       <p className="lead">
         {status} {company && <span> at {company}</span>}
       </p>
-      <p>{location && <span>{location}</span>}</p>
+      <p>{location && <strong>{location}</strong>}</p>
       <div className="icons my-1">
         {website && (
           <a href={website} target="_blank" rel="noopener noreferrer">

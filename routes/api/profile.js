@@ -4,10 +4,36 @@ const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const Post = require("../../models/Post");
+
 const { check, validationResult } = require("express-validator/check");
 const request = require("request");
 const config = require("config");
 const mongoose = require("mongoose");
+/////////// Upload Image /////////////////////
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: function(req, res, cb) {
+    cb(null, "./uploads/");
+  },
+  filename: function(req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  }
+});
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+    cb(null, false);
+  } else {
+    cb(null, true);
+  }
+};
+
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 1024 * 1024 * 5 },
+  fileFilter: fileFilter
+});
+////////////////////////////////////
 // Get api/profile/me
 // Get current users profile
 router.get("/me", auth, async (req, res) => {
@@ -37,6 +63,7 @@ router.get("/me", auth, async (req, res) => {
 // Create user profile
 router.post(
   "/",
+  upload.single("imageUrl"),
   [
     auth
     // [
@@ -49,7 +76,7 @@ router.post(
     // ]
   ],
   async (req, res) => {
-    // console.log(req.body);
+    console.log(req.file);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -59,6 +86,7 @@ router.post(
       website,
       location,
       latlng,
+      imageUrl,
       bio,
       status,
       skills,
@@ -67,6 +95,7 @@ router.post(
       twitter,
       instagram
     } = req.body.profileData;
+    // const { imageUrl } = req.file.path;
     //Build profile object
     const profileFields = {};
     profileFields.user = req.body.userId;
@@ -76,6 +105,7 @@ router.post(
     if (bio) profileFields.bio = bio;
     if (latlng) profileFields.latlng = latlng.join();
     if (status) profileFields.status = status;
+    if (imageUrl) profileFields.imageUrl = imageUrl;
 
     if (skills) {
       profileFields.skills = skills.split(",").map(skill => skill.trim());
@@ -109,6 +139,7 @@ router.post(
   }
 );
 
+///////////////////////////////
 router.put("/update", [auth], async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

@@ -127,6 +127,14 @@ const EditProfile = ({
             Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
           </small>
         </div>
+        <div
+          method="post"
+          enctype="multipart/form-data"
+          action="/api/profile/update"
+        >
+          <input type="file" name="file" />
+          <input type="submit" value="Submit" />
+        </div>
         {/* <div className="form-group">
           <input
             type="text"

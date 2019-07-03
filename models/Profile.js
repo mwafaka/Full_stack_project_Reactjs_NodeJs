@@ -13,6 +13,9 @@ const ProfileSchema = new mongoose.Schema({
   latlng: {
     type: String
   },
+  imageUrl: {
+    type: String
+  },
   website: {
     type: String
   },

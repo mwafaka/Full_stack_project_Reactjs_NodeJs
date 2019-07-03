@@ -41,12 +41,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </ul>
   );
   return (
-    <nav className="navbar bg-dark">
-      <h1>
+    <nav className="navbar bg-light">
+      <h3>
         <Link to="/">
           <i className="fa fa-map-signs " aria-hidden="true" /> Found In Berlin
         </Link>
-      </h1>
+      </h3>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}

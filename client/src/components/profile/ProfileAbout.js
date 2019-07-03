@@ -8,7 +8,7 @@ const ProfileAbout = ({
     user: { name }
   }
 }) => (
-  <div class="profile-about  p-2">
+  <div>
     {bio && (
       <Fragment>
         <h2 class="text-dark">{name.trim().split(" ")[0]}s Bio</h2>

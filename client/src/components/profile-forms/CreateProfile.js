@@ -14,6 +14,7 @@ class CreateProfile extends Component {
     status: "",
     skills: "",
     githubusername: "",
+    imageUrl: "",
     bio: "",
     twitter: "",
     facebook: "",
@@ -76,6 +77,7 @@ class CreateProfile extends Component {
       website,
       status,
       skills,
+      imageUrl,
       githubusername,
       bio,
       twitter,
@@ -185,12 +187,16 @@ class CreateProfile extends Component {
               username
             </small>
           </div>
-          {/* <div className="form-group">
-            <form method="post" enctype="multipart/form-data" action="/upload">
-              <input type="file" name="file" />
-              <input type="submit" value="Submit" />
-            </form>
-          </div> */}
+
+          <form
+            method="post"
+            enctype="multipart/form-data"
+            action="/api/profile"
+          >
+            <input type="file" name="file" />
+            <input type="submit" value="Submit" />
+          </form>
+
           <div className="form-group">
             <textarea
               placeholder="A short bio of yourself"

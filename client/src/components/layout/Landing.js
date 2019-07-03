@@ -8,19 +8,19 @@ const Landing = ({ isAuthenticated }) => {
   }
 
   return (
-    <section className="landing">
-      <div className="dark-overlay">
-        <div className="landing-inner">
-          <h1 className="x-large">
-            <i class="fa fa-map-signs" aria-hidden="true">
+    <section className="landing ">
+      <div className="dark-overlay ">
+        <div className="landing-inner ">
+          <h1 className="x-large ">
+            <i className="fa fa-map-signs " aria-hidden="true">
               {" "}
-              Found In Berlin
+              Found In <span className="dark">B</span>erlin
             </i>{" "}
           </h1>
           <h2 className="lead">
             Find or Create an Account To Add New Product In Berlin For Free
           </h2>
-          <div className="buttons">
+          <div className="buttons ">
             <Link to="/register" className="btn btn-success">
               Sign Up
             </Link>
