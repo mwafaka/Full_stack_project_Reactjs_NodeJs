@@ -23,6 +23,7 @@ const EditProfile = ({
     youtube: "",
     instagram: ""
   });
+
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
   useEffect(() => {
     getCurrentProfile();
@@ -46,7 +47,7 @@ const EditProfile = ({
   const {
     company,
     website,
-
+    imageUrl,
     status,
     skills,
     githubusername,
@@ -61,7 +62,6 @@ const EditProfile = ({
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
-    alert("sumbmited");
     e.preventDefault();
     updateProfile(formData, history, true);
   };
@@ -127,12 +127,8 @@ const EditProfile = ({
             Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
           </small>
         </div>
-        <div
-          method="post"
-          enctype="multipart/form-data"
-          action="/api/profile/update"
-        >
-          <input type="file" name="file" />
+        <div method="post" enctype="multipart/form-data" action="/update">
+          <input type="file" name="imageUrl" value={imageUrl} />
           <input type="submit" value="Submit" />
         </div>
         {/* <div className="form-group">

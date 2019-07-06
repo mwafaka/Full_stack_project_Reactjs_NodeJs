@@ -21,16 +21,12 @@ const Profile = ({
   }, [getProfileById, match.params.id]);
 
   return (
-    <div style={{ position: "relative", zIndex: "0" }}>
+    <div style={{ position: "relative", zIndex: "0" }} className="profile1">
       <Fragment>
         {profile === null || loading ? (
           <Spinner />
         ) : (
           <Fragment>
-            <Link to="/profiles" className="btn btn-light">
-              Go back
-            </Link>
-
             {auth.isAuthenticated &&
               auth.loading === false &&
               auth.user._id === profile.user._id && (
@@ -48,6 +44,8 @@ const Profile = ({
               >
                 <ProfileAbout profile={profile} />
               </div>
+
+              <img src={"/images/" + profile.imageUrl} width="200px" alt="" />
 
               <div className="profile-exp bg-white p-2">
                 <h2 className="text-danger">About</h2>
@@ -82,6 +80,12 @@ const Profile = ({
               <ProfileGithub username={profile.githubusername} />
             )} */}
             </div>
+            <h2 className="gobackbtn">
+              <i class="far fa-hand-point-left text-light" />{" "}
+              <Link to="/profiles" className="btn btn-light ">
+                Go back
+              </Link>
+            </h2>
           </Fragment>
         )}
       </Fragment>

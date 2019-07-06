@@ -22,7 +22,8 @@ class CreateProfile extends Component {
     youtube: "",
     instagram: "",
     displaySocialInputs: false,
-    toggleSocialInputs: false
+    toggleSocialInputs: false,
+    fileImage: []
   };
 
   onChange = e => {
@@ -33,12 +34,18 @@ class CreateProfile extends Component {
     e.preventDefault();
     console.log(this.props.loggedInUser);
     if (this.props.loggedInUser) {
-      let newProfile = {
-        userId: this.props.loggedInUser._id,
-        profileData: { ...this.state }
-      };
-      this.props.createProfile(newProfile, this.props.history);
-    } else {
+      if (this.state.fileImage.length > 0) {
+        let newProfile = {
+          userId: this.props.loggedInUser._id,
+          profileData: { ...this.state }
+        };
+        const data = new FormData();
+        data.append("fileImage", this.state.fileImage[0]);
+        data.append("userId", JSON.stringify(newProfile.userId));
+        data.append("profileData", JSON.stringify(newProfile.profileData));
+        // this.props.createProfile(newProfile, this.props.history);
+        this.props.createProfile(data, this.props.history);
+      }
     }
   };
 
@@ -71,6 +78,13 @@ class CreateProfile extends Component {
     );
   };
 
+  selectImage = event => {
+    console.log("event=>", event.target.files[0]);
+    this.setState({
+      fileImage: [event.target.files[0]]
+    });
+  };
+
   render() {
     const {
       company,
@@ -87,6 +101,7 @@ class CreateProfile extends Component {
       instagram,
       displaySocialInputs
     } = this.state;
+
     return (
       <Fragment>
         <h1 className="large text-dark">Create Your Profile</h1>
@@ -189,12 +204,12 @@ class CreateProfile extends Component {
           </div>
 
           <form
-            method="post"
             enctype="multipart/form-data"
-            action="/api/profile"
+            onChange={event => {
+              this.selectImage(event);
+            }}
           >
-            <input type="file" name="file" />
-            <input type="submit" value="Submit" />
+            <input type="file" name="imageUrl" value={imageUrl} />
           </form>
 
           <div className="form-group">

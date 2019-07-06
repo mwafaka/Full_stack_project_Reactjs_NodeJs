@@ -21,40 +21,45 @@ const Login = ({ login, isAuthenticated }) => {
     return <Redirect to="/dashboard" />;
   }
   return (
-    <Fragment>
-      {" "}
-      <h1 className="large text-dark">Sign In</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Sign Into Your Account
-      </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            minLength="6"
-            value={password}
-            onChange={e => onChange(e)}
-          />
-        </div>
+    <div className="login">
+      <Fragment>
+        {" "}
+        <h1 className="large text-light">
+          {" "}
+          <i class="fas fa-sign-in-alt" /> Sign In
+        </h1>
+        <p className="lead">
+          <i className="fas fa-user" /> Sign Into Your Account
+        </p>
+        <form className="form" onSubmit={e => onSubmit(e)}>
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="email"
+              value={email}
+              onChange={e => onChange(e)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              minLength="6"
+              value={password}
+              onChange={e => onChange(e)}
+            />
+          </div>
 
-        <input type="submit" className="btn btn-danger" value="Login" />
-      </form>
-      <p className="my-1">
-        Dont't have an account? <Link to="/register">Sign Up</Link>
-      </p>
-    </Fragment>
+          <input type="submit" className="btn btn-dark" value="Login" />
+        </form>
+        <p className="my-1 text-light">
+          Dont't have an account? <Link to="/register">Sign Up</Link>
+        </p>
+      </Fragment>
+    </div>
   );
 };
 Login.prototype = {

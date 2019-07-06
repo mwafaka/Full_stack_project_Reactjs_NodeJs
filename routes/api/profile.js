@@ -4,11 +4,12 @@ const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const Post = require("../../models/Post");
-
+const fs = require("fs");
 const { check, validationResult } = require("express-validator/check");
 const request = require("request");
 const config = require("config");
 const mongoose = require("mongoose");
+const path = require("path");
 /////////// Upload Image /////////////////////
 const multer = require("multer");
 
@@ -63,7 +64,7 @@ router.get("/me", auth, async (req, res) => {
 // Create user profile
 router.post(
   "/",
-  upload.single("imageUrl"),
+  // upload.single("imageUrl"),
   [
     auth
     // [
@@ -76,7 +77,33 @@ router.post(
     // ]
   ],
   async (req, res) => {
-    console.log(req.file);
+    console.log(req.files);
+
+    var imageUrl = "";
+    if (Object.keys(req.files).length == 0) {
+      imageUrl = "No_Image_Available.jpg";
+    } else {
+      let newImage = req.files.fileImage;
+      if (
+        newImage.mimetype !== "image/png" &&
+        newImage.mimetype !== "image/jpeg" &&
+        newImage.mimetype !== "image/gif"
+      ) {
+        return res.send({ error: "only files with extention: png, gif, jpeg" });
+      }
+      let imageName = newImage.name.split(".");
+      let imageExtention = imageName[imageName.length - 1];
+      imageUrl = JSON.parse(req.body.userId) + "." + imageExtention;
+
+      fs.writeFileSync(
+        path.normalize(".//client//public//images//") + imageUrl,
+        newImage.data,
+        err => {
+          if (err) return res.status(500).send(err);
+        }
+      );
+    }
+
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -86,7 +113,7 @@ router.post(
       website,
       location,
       latlng,
-      imageUrl,
+
       bio,
       status,
       skills,
@@ -94,18 +121,18 @@ router.post(
       facebook,
       twitter,
       instagram
-    } = req.body.profileData;
+    } = JSON.parse(req.body.profileData);
     // const { imageUrl } = req.file.path;
     //Build profile object
     const profileFields = {};
-    profileFields.user = req.body.userId;
+    profileFields.user = JSON.parse(req.body.userId);
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (latlng) profileFields.latlng = latlng.join();
     if (status) profileFields.status = status;
-    if (imageUrl) profileFields.imageUrl = imageUrl;
+    if (imageUrl !== "") profileFields.imageUrl = imageUrl;
 
     if (skills) {
       profileFields.skills = skills.split(",").map(skill => skill.trim());
@@ -118,11 +145,11 @@ router.post(
     if (instagram) profileFields.social.instagram = instagram;
 
     try {
-      let profile = await Profile.findOne({ _id: req.body.userId });
+      let profile = await Profile.findOne({ _id: JSON.parse(req.body.userId) });
       if (profile) {
         //Update
         profile = await Profile.findOneAndUpdate(
-          { user: req.body.userId },
+          { user: JSON.parse(req.body.userId) },
           { $set: profileFields },
           { new: true }
         );
@@ -148,9 +175,11 @@ router.put("/update", [auth], async (req, res) => {
   const {
     company,
     website,
+    skills,
     bio,
     status,
     youtube,
+    imageUrl,
     facebook,
     twitter,
     instagram
@@ -166,6 +195,11 @@ router.put("/update", [auth], async (req, res) => {
       if (website) profileDB.website = website;
       if (bio) profileDB.bio = bio;
       if (status) profileDB.status = status;
+      if (imageUrl) profileDB.imageUrl = imageUrl;
+
+      if (skills) {
+        profileDB.skills = skills.split(",").map(skill => skill.trim());
+      }
 
       if (youtube) profileDB.social.youtube = youtube;
       if (twitter) profileDB.social.twitter = twitter;

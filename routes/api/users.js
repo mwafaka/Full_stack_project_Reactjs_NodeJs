@@ -53,7 +53,7 @@ router.post(
       // Return jsonwebtokwn
       const payload = {
         user: {
-          id: user.id
+          _id: user._id
         }
       };
       jwt.sign(

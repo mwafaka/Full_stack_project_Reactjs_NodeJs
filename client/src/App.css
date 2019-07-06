@@ -2,7 +2,7 @@
   --primary-color: #17a2b8;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
+  --danger-color: #007bff;
   --success-color: #28a745;
 }
 
@@ -35,21 +35,38 @@ img {
 
 /* Utilities */
 .container {
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  /* margin-top: 6rem; */
+  /* margin-bottom: 3rem; */
+  /* background-color: rgb(97, 92, 92); */
 }
-
+.profiles {
+  margin-top: 15%;
+  color: white;
+}
+.jumbotron {
+  background-color: #58616a;
+  border: 0.5px solid black;
+}
+.cc {
+  color: rgb(255, 254, 254);
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
 /*  Map style*/
 .leaflet-container {
   height: 400px;
   width: 100%;
   position: absolute;
 }
-
+.profile1 {
+  margin-top: 10%;
+}
+.gobackbtn {
+  margin-top: 8%;
+}
 /* Text Styles*/
 .x-large {
   font-size: 2rem;
@@ -58,16 +75,38 @@ img {
 }
 
 .large {
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .lead {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
-
+.lead1 {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 9s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
 .text-center {
   text-align: center;
 }
@@ -131,7 +170,14 @@ img {
 .my-3 {
   margin: 3rem 0;
 }
-
+.register {
+  margin-top: 10%;
+  height: 34.33rem;
+}
+.login {
+  margin-top: 15%;
+  height: 31rem;
+}
 .btn {
   display: inline-block;
   background: var(--light-color);
@@ -146,7 +192,7 @@ img {
 }
 
 .badge {
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   padding: 0.1rem;
   text-align: center;
   margin: 0.3rem;
@@ -155,9 +201,9 @@ img {
 }
 
 .alert {
-  padding: 0.8rem;
+  padding: 0.1rem;
   margin: 1rem 0;
-  opacity: 0.9;
+  opacity: 1;
   background: var(--light-color);
   color: #333;
 }
@@ -315,7 +361,7 @@ button {
   width: 100%;
   top: 0;
   /* border-bottom: solid 1px var(--primary-color); */
-  opacity: 0.9;
+  opacity: 0.2;
 }
 
 .navbar ul {
@@ -323,13 +369,13 @@ button {
 }
 
 .navbar a {
-  color: black;
+  color: rgb(58, 55, 55);
   padding: 0.45rem;
   margin: 0 0.15rem;
 }
 
 .navbar a:hover {
-  color: var(--danger-color);
+  color: var(--white-color);
 }
 
 .navbar .welcome span {
@@ -342,7 +388,10 @@ button {
   background: url("./img/showcase.jpg") no-repeat center center/cover;
   height: 100vh;
 }
-
+#root {
+  background: url("./img/showcase.jpg");
+  top: 0;
+}
 .landing-inner {
   color: #fff;
   height: 100%;

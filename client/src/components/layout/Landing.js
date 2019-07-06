@@ -11,24 +11,24 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing ">
       <div className="dark-overlay ">
         <div className="landing-inner ">
-          <h1 className="x-large ">
+          {/* <h1 className="x-large ">
             <i className="fa fa-map-signs " aria-hidden="true">
               {" "}
               Found In <span className="dark">B</span>erlin
             </i>{" "}
-          </h1>
-          <h2 className="lead">
+          </h1> */}
+          <p className="lead1">
             Find or Create an Account To Add New Product In Berlin For Free
-          </h2>
+          </p>
           <div className="buttons ">
-            <Link to="/register" className="btn btn-success">
+            <Link to="/register" className="btn btn-dark">
               Sign Up
             </Link>
             <Link to="/login" className="btn btn-light">
               Login
             </Link>
           </div>
-          <div className="buttons">
+          {/* <div className="buttons">
             <Link to="/login" className="btn btn-lg btn-danger m-1">
               <i class="fa fa-google">Sign With Google</i>
             </Link>
@@ -39,7 +39,7 @@ const Landing = ({ isAuthenticated }) => {
                 Sign With FaceBoock
               </i>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

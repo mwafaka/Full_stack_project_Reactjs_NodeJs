@@ -19,7 +19,6 @@ router.get("/", auth, async (req, res) => {
 });
 
 // Login user  api/auth
-
 router.post(
   "/",
   [
@@ -60,7 +59,7 @@ router.post(
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json({ token: token, user: user });
         }
       );
     } catch (err) {

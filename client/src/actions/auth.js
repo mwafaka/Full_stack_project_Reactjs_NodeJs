@@ -15,21 +15,19 @@ import setAuthToken from "../utils/setAuthToken";
 // Load User
 export const loadUser = () => async dispatch => {
   try {
-    if (localStorage.token) {
-      const config = {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": localStorage.token
-        }
-      };
-      setAuthToken(localStorage.token);
-      const res = await axios.get("/api/auth", config);
-      dispatch({
-        type: USER_LOADED,
-        payload: res.data
-      });
-    }
+    const config = {
+      withCredentials: true,
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": localStorage.token
+      }
+    };
+    setAuthToken(localStorage.token);
+    const res = await axios.get("/api/auth", config);
+    dispatch({
+      type: USER_LOADED,
+      payload: res.data
+    });
   } catch (error) {
     dispatch({
       type: AUTH_ERROR
@@ -47,11 +45,15 @@ export const register = ({ name, email, password }) => async dispatch => {
 
   try {
     const res = await axios.post("/api/users", body, config);
-    dispatch({
-      type: REGISTER_SUCCESS,
-      payload: res.data
-    });
-    dispatch(loadUser());
+    if (res.status === 200) {
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data
+      });
+      await localStorage.setItem("token", res.data.token);
+      await dispatch(loadUser());
+    } else {
+    }
   } catch (error) {
     const errors = error.response.data.errors;
     if (errors) {
@@ -72,11 +74,12 @@ export const login = (email, password) => async dispatch => {
 
   try {
     const res = await axios.post("/api/auth", body, config);
+    await localStorage.setItem("token", res.data.token);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data
     });
-    dispatch(loadUser());
+    // dispatch(loadUser());
   } catch (error) {
     const errors = error.response;
     if (errors) {
