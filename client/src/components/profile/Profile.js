@@ -34,7 +34,7 @@ const Profile = ({
                   Edit Profile{" "}
                 </Link>
               )}
-            <div className="profile-grid my-1 row">
+            <div className="">
               <ProfileTop profile={profile} />
               <Map profile={profile} />
               <div
@@ -45,10 +45,15 @@ const Profile = ({
                 <ProfileAbout profile={profile} />
               </div>
 
-              <img src={"/images/" + profile.imageUrl} width="200px" alt="" />
+              <img
+                src={"/images/" + profile.imageUrl}
+                width="200px"
+                height="500px"
+                alt=""
+              />
 
-              <div className="profile-exp bg-white p-2">
-                <h2 className="text-danger">About</h2>
+              <div className="profile-exp  p-2">
+                <h2 className="text-primary">About</h2>
                 {profile.about && profile.about.length > 0 ? (
                   <Fragment>
                     {profile.about &&
@@ -58,12 +63,12 @@ const Profile = ({
                     {profile.latlng}
                   </Fragment>
                 ) : (
-                  <h4>No about credentials</h4>
+                  <h4 className="text-light">No about credentials</h4>
                 )}
               </div>
 
-              <div className="profile-edu bg-white p-2">
-                <h2 className="text-danger">Another</h2>
+              <div className="profile-edu  p-2">
+                <h2 className="text-primary">Another</h2>
                 {profile.another && profile.another.length > 0 ? (
                   <Fragment>
                     {profile.another &&
@@ -72,7 +77,7 @@ const Profile = ({
                       ))}
                   </Fragment>
                 ) : (
-                  <h4>No another credentials</h4>
+                  <h4 className="text-light">No another credentials</h4>
                 )}
               </div>
 
@@ -81,7 +86,7 @@ const Profile = ({
             )} */}
             </div>
             <h2 className="gobackbtn">
-              <i class="far fa-hand-point-left text-light" />{" "}
+              <i class="far fa-hand-point-left text-primary" />{" "}
               <Link to="/profiles" className="btn btn-light ">
                 Go back
               </Link>

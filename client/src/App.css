@@ -75,7 +75,7 @@ img {
 }
 
 .large {
-  font-size: 2rem;
+  font-size: 4rem;
   line-height: 1.2;
   margin-bottom: 1rem;
   text-align: center;
@@ -116,7 +116,7 @@ img {
 }
 
 .text-dark {
-  color: var(--dark-color);
+  color: var(--light-color);
 }
 
 /* Padding */
@@ -125,6 +125,7 @@ img {
 }
 .p-1 {
   padding: 1rem;
+  display: flex;
 }
 .p-2 {
   padding: 2rem;
@@ -369,7 +370,7 @@ button {
 }
 
 .navbar a {
-  color: rgb(58, 55, 55);
+  color: rgb(8, 8, 8);
   padding: 0.45rem;
   margin: 0 0.15rem;
 }

@@ -12,8 +12,8 @@ const ProfileTop = ({
   }
 }) => {
   return (
-    <div className="profile-top bg-light  p-2 text-dark">
-      <img className="bg-cover " src={avatar} alt="" />
+    <div className="profile-top   p-2 text-light">
+      {/* <img className="bg-cover " src={avatar} alt="" /> */}
       <h1 className="large ">{name}</h1>
       <p className="lead">
         {status} {company && <span> at {company}</span>}

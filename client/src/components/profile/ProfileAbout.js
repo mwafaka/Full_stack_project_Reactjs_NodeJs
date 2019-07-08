@@ -11,16 +11,16 @@ const ProfileAbout = ({
   <div>
     {bio && (
       <Fragment>
-        <h2 class="text-dark">{name.trim().split(" ")[0]}s Bio</h2>
+        <h2 class="text-light">{name.trim().split(" ")[0]}s Bio</h2>
         <p>{bio}</p>
         <div class="line" />
       </Fragment>
     )}
-    <h2 class="text-dark">Skills</h2>
+    <h2 class="text-light">Skills</h2>
     <div class="skills">
       {skills.map((skill, index) => (
-        <div key={index} className="p-1">
-          <i className="fa fa-map-marker danger" />
+        <div key={index} className="p-1  text-light">
+          <i className="fa fa-map-marker primary" />
           {skill}
         </div>
       ))}
