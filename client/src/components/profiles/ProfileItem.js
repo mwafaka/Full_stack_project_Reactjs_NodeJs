@@ -13,13 +13,18 @@ const ProfileItem = ({ profile }) => {
   } = profile;
   return (
     <div>
-      <img src={imageUrl} className="" alt="Cinque Terre" />
       <Jumbotron>
         <h1 className="display-3 cc">{name}</h1>
         <p className="lead">
           {status}
           {company && <span>at {company} </span>}
         </p>
+        <img
+          src={"/images/" + profile.imageUrl}
+          width="200px"
+          height="300px"
+          alt=""
+        />
 
         <hr className="my-2" />
         <p className="my-1">

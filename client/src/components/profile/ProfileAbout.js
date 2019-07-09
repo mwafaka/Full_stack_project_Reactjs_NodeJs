@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-
+import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
 const ProfileAbout = ({
   profile: {
     bio,
@@ -8,7 +8,7 @@ const ProfileAbout = ({
     user: { name }
   }
 }) => (
-  <div>
+  <div style={{ textAlign: "center " }}>
     {bio && (
       <Fragment>
         <h2 class="text-light">{name.trim().split(" ")[0]}s Bio</h2>
@@ -16,13 +16,33 @@ const ProfileAbout = ({
         <div class="line" />
       </Fragment>
     )}
-    <h2 class="text-light">Skills</h2>
-    <div class="skills">
+    <h1 class="text-primary">Offers</h1>
+    <div class="">
       {skills.map((skill, index) => (
-        <div key={index} className="p-1  text-light">
-          <i className="fa fa-map-marker primary" />
-          {skill}
-        </div>
+        <Row key={index}>
+          <Col sm="12 " className=" text-light">
+            <Card
+              body
+              inverse
+              style={{ backgroundColor: "#333", borderColor: "#333" }}
+            >
+              <CardTitle>Special Healthy food</CardTitle>
+              <CardText>{skill}</CardText>
+              <Button>reservation</Button>
+            </Card>
+          </Col>
+          {/* <Col sm="6">
+          <Card body>
+            <CardTitle>Special Title Treatment</CardTitle>
+            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+            <Button>Go somewhere</Button>
+          </Card>
+        </Col> */}
+        </Row>
+        // <div key={index} className="p-1  text-light">
+        //   <i className="fa fa-map-marker primary" />
+        //   {skill}
+        // </div>
       ))}
     </div>
   </div>

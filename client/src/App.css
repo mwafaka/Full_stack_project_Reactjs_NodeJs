@@ -4,6 +4,7 @@
   --light-color: #f4f4f4;
   --danger-color: #007bff;
   --success-color: #28a745;
+  --grey-color: --grey-color;
 }
 
 * {
@@ -80,7 +81,9 @@ img {
   margin-bottom: 1rem;
   text-align: center;
 }
-
+.btn {
+  background-color: grey;
+}
 .lead {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -176,6 +179,10 @@ img {
   height: 34.33rem;
 }
 .login {
+  margin-top: 15%;
+  height: 31rem;
+}
+.dashboard {
   margin-top: 15%;
   height: 31rem;
 }

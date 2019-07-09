@@ -21,10 +21,10 @@ router.get("/", auth, async (req, res) => {
 // Login user  api/auth
 router.post(
   "/",
-  [
-    check("email", "Please include a valid email").isEmail(),
-    check("password", "Password is required ").exists()
-  ],
+  // [
+  //   check("email", "Please include a valid email").isEmail(),
+  //   check("password", "Password is required ").exists()
+  // ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

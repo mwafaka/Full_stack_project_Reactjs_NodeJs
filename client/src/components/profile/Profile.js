@@ -9,6 +9,7 @@ import ProfileAbout from "./ProfileAbout";
 import ProfileEducation from "./ProfileEducation";
 
 import { getProfileById } from "../../actions/profile";
+import { Toast, ToastBody, ToastHeader } from "reactstrap";
 // import Profileabout from "./Profileabout";
 const Profile = ({
   getProfileById,
@@ -36,6 +37,12 @@ const Profile = ({
               )}
             <div className="">
               <ProfileTop profile={profile} />
+              <img
+                src={"/images/" + profile.imageUrl}
+                width="200px"
+                height="500px"
+                alt=""
+              />
               <Map profile={profile} />
               <div
                 style={{
@@ -44,13 +51,6 @@ const Profile = ({
               >
                 <ProfileAbout profile={profile} />
               </div>
-
-              <img
-                src={"/images/" + profile.imageUrl}
-                width="200px"
-                height="500px"
-                alt=""
-              />
 
               <div className="profile-exp  p-2">
                 <h2 className="text-primary">About</h2>
