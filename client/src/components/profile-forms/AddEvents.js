@@ -2,12 +2,12 @@ import React, { Fragment, useState } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addExperience } from "../../actions/profile";
+import { addEvent } from "../../actions/profile";
 
-const AddExperience = ({ addExperience, history }) => {
+const AddEvent = ({ addEvent, history }) => {
   const [formData, setFormData] = useState({
     company: "",
-    tilte: "",
+    event: "",
     location: "",
     from: "",
     to: "",
@@ -16,14 +16,14 @@ const AddExperience = ({ addExperience, history }) => {
   });
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { company, title, location, from, to, current, description } = formData;
+  const { company, event, location, from, to, current, description } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
     <div style={{ marginTop: "100px" }}>
       <Fragment>
-        <h1 className="large text-primary">Add Some</h1>
+        <h1 className="large text-primary">Add Some Events</h1>
         <p className="lead">
           <i className="fas fa-code-branch" /> Add any developer/programming
           positions that you have had in the past
@@ -33,15 +33,15 @@ const AddExperience = ({ addExperience, history }) => {
           className="form"
           onSubmit={e => {
             e.preventDefault();
-            addExperience(formData, history);
+            addEvent(formData, history);
           }}
         >
           <div className="form-group">
             <input
               type="text"
-              placeholder="* Job Title"
-              name="title"
-              value={title}
+              placeholder=" Event Title"
+              name="event"
+              value={event}
               onChange={e => onChange(e)}
               required
             />
@@ -119,11 +119,11 @@ const AddExperience = ({ addExperience, history }) => {
   );
 };
 
-AddExperience.propTypes = {
-  addExperience: PropTypes.func.isRequired
+addEvent.propTypes = {
+  addEvent: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { addExperience }
-)(withRouter(AddExperience));
+  { addEvent }
+)(withRouter(AddEvent));

@@ -12,7 +12,7 @@ class CreateProfile extends Component {
     location: "",
     latlng: "",
     status: "",
-    skills: "",
+    offers: "",
     githubusername: "",
     imageUrl: "",
     bio: "",
@@ -90,7 +90,7 @@ class CreateProfile extends Component {
       company,
       website,
       status,
-      skills,
+      offers,
       imageUrl,
       githubusername,
       bio,
@@ -182,8 +182,8 @@ class CreateProfile extends Component {
               <input
                 type="text"
                 placeholder="* "
-                name="skills"
-                value={skills}
+                name="offers"
+                value={offers}
                 onChange={e => this.onChange(e)}
               />
               <small className="form-text">

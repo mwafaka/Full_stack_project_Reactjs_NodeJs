@@ -4,7 +4,7 @@ import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
 const ProfileAbout = ({
   profile: {
     bio,
-    skills,
+    offers,
     user: { name }
   }
 }) => (
@@ -16,10 +16,10 @@ const ProfileAbout = ({
         <div class="line" />
       </Fragment>
     )}
-    <h1 class="text-primary">Offers</h1>
+    <h1 class="text-light large">Offers</h1>
     <div class="">
-      {skills.map((skill, index) => (
-        <Row key={index}>
+      {offers.map((offer, index) => (
+        <Row key={index} className="m-2">
           <Col sm="12 " className=" text-light">
             <Card
               body
@@ -27,8 +27,15 @@ const ProfileAbout = ({
               style={{ backgroundColor: "#333", borderColor: "#333" }}
             >
               <CardTitle>Special Healthy food</CardTitle>
-              <CardText>{skill}</CardText>
-              <Button>reservation</Button>
+              <CardText
+                className="
+             blue text-primary"
+              >
+                {offer}
+              </CardText>
+              <Button style={{ fontSize: "25px", color: "white" }}>
+                reservation
+              </Button>
             </Card>
           </Col>
           {/* <Col sm="6">

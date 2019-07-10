@@ -71,7 +71,7 @@ router.post(
     //   check("status", "Status is required")
     //     .not()
     //     .isEmpty(),
-    //   check("skills", "skills is required")
+    //   check("offers", "skills is required")
     //     .not()
     //     .isEmpty()
     // ]
@@ -116,7 +116,7 @@ router.post(
 
       bio,
       status,
-      skills,
+      offers,
       youtube,
       facebook,
       twitter,
@@ -134,8 +134,8 @@ router.post(
     if (status) profileFields.status = status;
     if (imageUrl !== "") profileFields.imageUrl = imageUrl;
 
-    if (skills) {
-      profileFields.skills = skills.split(",").map(skill => skill.trim());
+    if (offers) {
+      profileFields.offers = offers.split(",").map(skill => skill.trim());
     }
     // build social object
     profileFields.social = {};
@@ -175,7 +175,7 @@ router.put("/update", [auth], async (req, res) => {
   const {
     company,
     website,
-    skills,
+    offers,
     bio,
     status,
     youtube,
@@ -197,8 +197,8 @@ router.put("/update", [auth], async (req, res) => {
       if (status) profileDB.status = status;
       if (imageUrl) profileDB.imageUrl = imageUrl;
 
-      if (skills) {
-        profileDB.skills = skills.split(",").map(skill => skill.trim());
+      if (offers) {
+        profileDB.offers = offers.split(",").map(skill => skill.trim());
       }
 
       if (youtube) profileDB.social.youtube = youtube;
@@ -266,12 +266,12 @@ router.delete("/", auth, async (req, res) => {
   }
 });
 
-// Add profile education
-// Put  api/profile/education
+// Add events
+// Put  api/profile/event
 // Access Private
 
 router.put(
-  "/about",
+  "/event",
   [
     auth,
     [
@@ -320,16 +320,16 @@ router.put(
     }
   }
 );
-// Delete  experience from  profile
-// Delete  api/profile/experience/:exp_id
+// Delete  event from  profile
+// Delete  api/profile/event/:ev_id
 // Access Private
-router.delete("/about/:exp_id", auth, async (req, res) => {
+router.delete("/event/:ev_id", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ _id: req.user._id });
     // Get remove index
     const removeIndex = profile.about
       .map(item => item._id)
-      .indexOf(req.params.exp_id);
+      .indexOf(req.params.ev_id);
     profile.about.splice(removeIndex, 1);
     await profile.save();
     res.json(profile);

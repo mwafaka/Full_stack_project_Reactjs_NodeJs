@@ -17,7 +17,7 @@ const EditProfile = ({
     company: "",
     website: "",
     status: "",
-    skills: "",
+    offers: "",
     githubusername: "",
     bio: "",
     twitter: "",
@@ -35,7 +35,7 @@ const EditProfile = ({
       website: loading || !profile.website ? "" : profile.website,
       location: loading || !profile.location ? "" : profile.location,
       status: loading || !profile.status ? "" : profile.status,
-      skills: loading || !profile.skills ? "" : profile.skills.join(","),
+      offers: loading || !profile.offers ? "" : profile.offers.join(","),
       githubusername:
         loading || !profile.githubusername ? "" : profile.githubusername,
       bio: loading || !profile.bio ? "" : profile.bio,
@@ -52,7 +52,7 @@ const EditProfile = ({
     website,
     imageUrl,
     status,
-    skills,
+    offers,
     githubusername,
     bio,
     twitter,
@@ -125,9 +125,9 @@ const EditProfile = ({
           <div className="form-group">
             <input
               type="text"
-              placeholder="* skills"
-              name="skills"
-              value={skills}
+              placeholder="* offers"
+              name="offers"
+              value={offers}
               onChange={e => onChange(e)}
             />
             <small className="form-text">

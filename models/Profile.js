@@ -22,7 +22,7 @@ const ProfileSchema = new mongoose.Schema({
   status: {
     type: String
   },
-  skills: {
+  offers: {
     type: [String]
   },
   bio: {
@@ -31,7 +31,7 @@ const ProfileSchema = new mongoose.Schema({
 
   about: [
     {
-      title: {
+      event: {
         type: String
       },
       company: {

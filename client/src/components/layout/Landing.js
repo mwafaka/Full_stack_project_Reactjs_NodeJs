@@ -18,7 +18,7 @@ const Landing = ({ isAuthenticated }) => {
             </i>{" "}
           </h1> */}
           <p className="lead1">
-            Find or Create an Account To Add New Product In Berlin For Free
+            Find a Restaurant In Berlin or Advertise your own with us for Free
           </p>
           <div className="buttons ">
             <Link to="/register" className="btn btn-dark">

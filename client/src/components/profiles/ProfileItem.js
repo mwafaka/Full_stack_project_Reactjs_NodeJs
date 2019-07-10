@@ -14,7 +14,7 @@ const ProfileItem = ({ profile }) => {
   return (
     <div>
       <Jumbotron>
-        <h1 className="display-3 cc">{name}</h1>
+        <h2 className="display-3 cc">{name}</h2>
         <p className="lead">
           {status}
           {company && <span>at {company} </span>}

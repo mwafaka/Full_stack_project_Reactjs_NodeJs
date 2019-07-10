@@ -7,10 +7,11 @@ import ProfileTop from "./ProfileTop";
 import Map from "./Map";
 import ProfileAbout from "./ProfileAbout";
 import ProfileEducation from "./ProfileEducation";
+import ProfileExperience from "./ProfileExperience";
 
 import { getProfileById } from "../../actions/profile";
 import { Toast, ToastBody, ToastHeader } from "reactstrap";
-// import Profileabout from "./Profileabout";
+
 const Profile = ({
   getProfileById,
   profile: { profile, loading },
@@ -53,22 +54,22 @@ const Profile = ({
               </div>
 
               <div className="profile-exp  p-2">
-                <h2 className="text-primary">About</h2>
+                <h2 className="text-primary">Events</h2>
                 {profile.about && profile.about.length > 0 ? (
                   <Fragment>
                     {profile.about &&
                       profile.about.map(about => (
-                        <ProfileAbout key={about._id} about={about} />
+                        <ProfileExperience key={about._id} about={about} />
                       ))}
                     {profile.latlng}
                   </Fragment>
                 ) : (
-                  <h4 className="text-light">No about credentials</h4>
+                  <h4 className="text-light">No Events credentials</h4>
                 )}
               </div>
 
               <div className="profile-edu  p-2">
-                <h2 className="text-primary">Another</h2>
+                <h2 className="text-primary">Offers Permanent</h2>
                 {profile.another && profile.another.length > 0 ? (
                   <Fragment>
                     {profile.another &&
@@ -77,7 +78,7 @@ const Profile = ({
                       ))}
                   </Fragment>
                 ) : (
-                  <h4 className="text-light">No another credentials</h4>
+                  <h4 className="text-light">No Offers Permanent credentials</h4>
                 )}
               </div>
 
