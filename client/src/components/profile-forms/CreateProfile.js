@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import AlgoliaPlaces from "algolia-places-react";
-
+import Config from "../../config.json";
 import { connect } from "react-redux";
 import { createProfile } from "../../actions/profile";
 
@@ -162,8 +162,8 @@ class CreateProfile extends Component {
               <AlgoliaPlaces
                 placeholder="Write an address here"
                 options={{
-                  appId: "plV7FOH0L4TX",
-                  apiKey: "5f07d771e38fc7ec02c89334c69d8fa1"
+                  appId: Config.algoliaAppId,
+                  apiKey: Config.algoliaApiKey
                 }}
                 onChange={({ query, rawAnswer, suggestion, suggestionIndex }) =>
                   this.selectAddressHandler(rawAnswer, suggestion)

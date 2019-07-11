@@ -5,21 +5,17 @@ import { connect } from "react-redux";
 import { deleteExperience } from "../../actions/profile";
 
 const Experience = ({ about, deleteExperience }) => {
-  const aboutProfile = about.map(exp => (
-    <tr key={exp._id}>
-      <td>{exp.company}</td>
-      <td className="hide-sm">{exp.title}</td>
+  const aboutProfile = about.map(ev => (
+    <tr key={ev._id}>
+      <td>{ev.company}</td>
+      <td className="hide-sm">{ev.title}</td>
       <td>
-        <Moment format="YYYY/MM/DD">{exp.from}</Moment> -{" "}
-        {exp.to === null ? (
-          " Now"
-        ) : (
-          <Moment format="YYYY/MM/DD">{exp.to}</Moment>
-        )}
+        <Moment format="YYYY/MM/DD">{ev.from}</Moment> -{" "}
+        {ev.to === null ? " Now" : <Moment format="YYYY/MM/DD">{ev.to}</Moment>}
       </td>
       <td>
         <button
-          onClick={() => deleteExperience(exp._id)}
+          onClick={() => deleteExperience(ev._id)}
           className="btn btn-danger"
         >
           Delete
