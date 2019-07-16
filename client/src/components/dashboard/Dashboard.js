@@ -25,15 +25,15 @@ const Dashboard = ({
       <Fragment>
         <h1 className="large text-primary">
         <i class="fas fa-tachometer-alt"></i> Dashboard</h1>
-        <p className="lead">
-          <i className="fas fa-user" /> Welcome {auth.user && auth.user.name}
+        <p className="lead text-primary">
+          <i className="fas fa-user text-primary" /> Welcome {auth.user && auth.user.name}
         </p>
         {profile ? (
           <Fragment>
             <DashboardActions />
-            {profile && profile.about && <Experience about={profile.about} />}
+            {/* {profile && profile.about && <Experience about={profile.about} />}
             {profile && profile.education && (
-              <Education education={profile.education} />
+              <Education education={profile.education} /> */}
             )}
 
             <div className="my-2">

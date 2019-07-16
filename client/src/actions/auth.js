@@ -79,11 +79,13 @@ export const login = (email, password) => async dispatch => {
       type: LOGIN_SUCCESS,
       payload: res.data
     });
-    // dispatch(loadUser());
+    dispatch(loadUser());
   } catch (error) {
     const errors = error.response;
+    console.log(errors);
     if (errors) {
-      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    dispatch(setAlert(errors.data.errors[0].msg,"danger"))
+      // errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
     }
     dispatch({ type: LOGIN_FAIL });
   }

@@ -50,7 +50,7 @@ class CreateProfile extends Component {
   };
 
   selectAddressHandler = (rawAnswer, suggestion) => {
-    console.log(suggestion);
+    // console.log(suggestion);
     let locationAddress = "";
     if (suggestion.name) {
       locationAddress = suggestion.name;
@@ -92,14 +92,11 @@ class CreateProfile extends Component {
       status,
       offers,
       imageUrl,
-      githubusername,
       bio,
       twitter,
-      facebook,
-      linkedin,
+      facebook, 
       youtube,
       instagram,
-      displaySocialInputs
     } = this.state;
 
     return (
@@ -190,19 +187,30 @@ class CreateProfile extends Component {
                 Please use comma separated values
               </small>
             </div>
-            {/* <div className="form-group">
-            <input
-              type="text"
-              placeholder="Github Username"
-              name="githubusername"
-              value={githubusername}
-              onChange={e => this.onChange(e)}
-            />
-            {/* <small className="form-text">
-              If you want your latest repos and a Github link, include your
-              username
-            </small> */}
-            {/* </div> */} */}
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="* "
+                name="offers"
+                value={offers}
+                onChange={e => this.onChange(e)}
+              />
+              <small className="form-text">
+                Please use comma separated values
+              </small>
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="* "
+                name="offers"
+                value={offers}
+                onChange={e => this.onChange(e)}
+              />
+              <small className="form-text">
+                Please use comma separated values
+              </small>
+            </div>
             <form
               enctype="multipart/form-data"
               onChange={event => {
@@ -248,7 +256,6 @@ class CreateProfile extends Component {
                     onChange={e => this.onChange(e)}
                   />
                 </div>
-
                 <div className="form-group social-input">
                   <i className="fab fa-facebook fa-2x" />
                   <input
@@ -259,7 +266,6 @@ class CreateProfile extends Component {
                     onChange={e => this.onChange(e)}
                   />
                 </div>
-
                 <div className="form-group social-input">
                   <i className="fab fa-youtube fa-2x" />
                   <input
@@ -270,18 +276,6 @@ class CreateProfile extends Component {
                     onChange={e => this.onChange(e)}
                   />
                 </div>
-
-                {/* <div className="form-group social-input">
-                <i className="fab fa-linkedin fa-2x" />
-                <input
-                  type="text"
-                  placeholder="Linkedin URL"
-                  name="linkedin"
-                  value={linkedin}
-                  onChange={e => this.onChange(e)}
-                />
-              </div> */}
-
                 <div className="form-group social-input">
                   <i className="fab fa-instagram fa-2x" />
                   <input

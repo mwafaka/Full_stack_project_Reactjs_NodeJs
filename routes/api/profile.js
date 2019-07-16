@@ -10,31 +10,6 @@ const request = require("request");
 const config = require("config");
 const mongoose = require("mongoose");
 const path = require("path");
-/////////// Upload Image /////////////////////
-// const multer = require("multer");
-
-// const storage = multer.diskStorage({
-//   destination: function(req, res, cb) {
-//     cb(null, "./uploads/");
-//   },
-//   filename: function(req, file, cb) {
-//     cb(null, new Date().toISOString() + file.originalname);
-//   }
-// });
-// const fileFilter = (req, file, cb) => {
-//   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-//     cb(null, false);
-//   } else {
-//     cb(null, true);
-//   }
-// };
-
-// const upload = multer({
-//   storage: storage,
-//   limits: { fileSize: 1024 * 1024 * 5 },
-//   fileFilter: fileFilter
-// });
-////////////////////////////////////
 // Get api/profile/me
 // Get current users profile
 router.get("/me", auth, async (req, res) => {
@@ -42,7 +17,7 @@ router.get("/me", auth, async (req, res) => {
     await Profile.findOne(
       { user: mongoose.Types.ObjectId(req.user._id) },
       (err, doc) => {
-        console.log("profile", doc);
+        // console.log("profile", doc);
       }
     );
 
@@ -77,7 +52,7 @@ router.post(
     // ]
   ],
   async (req, res) => {
-    console.log(req.files);
+    // console.log(req.files);
 
     var imageUrl = "";
     if (Object.keys(req.files).length == 0) {
@@ -113,7 +88,6 @@ router.post(
       website,
       location,
       latlng,
-
       bio,
       status,
       offers,
@@ -198,7 +172,7 @@ router.put("/update", [auth], async (req, res) => {
       if (imageUrl) profileDB.imageUrl = imageUrl;
 
       if (offers) {
-        profileDB.offers = offers.split(",").map(skill => skill.trim());
+        profileDB.offers = offers.split(",").map(offer => offer.trim());
       }
 
       if (youtube) profileDB.social.youtube = youtube;
@@ -413,32 +387,4 @@ router.delete("/another/:edu_id", auth, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-
-// Get  user repos from  Github
-// Delete  api/profile/github/:username
-// Access public
-// router.get("/github/:username", (req, res) => {
-//   try {
-//     const options = {
-//       uri: `https://api.github.com/users/${
-//         req.params.username
-//       }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-//         "githubClientId"
-//       )}&client_secret=${config.get("githubSecret")}`,
-//       method: "GET",
-//       headers: { "user-agent": "node.js" }
-//     };
-//     request(options, (error, response, body) => {
-//       if (error) console.error(error);
-//       if (response.statusCode !== 200) {
-//         return res.status(400).json({ msg: "No Github profile found " });
-//       }
-//       res.json(JSON.parse(body));
-//     });
-//   } catch (error) {
-//     console.error(error.message);
-//     res.status(500).send("Server Error");
-//   }
-// });
-
 module.exports = router;

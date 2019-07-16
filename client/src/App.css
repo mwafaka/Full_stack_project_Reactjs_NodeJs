@@ -62,6 +62,7 @@ img {
   height: 400px;
   width: 100%;
   position: absolute;
+  margin-top: 0.8%;
 }
 .profile1 {
   margin-top: 10%;
@@ -528,6 +529,8 @@ button {
 .post-form .post-form-header {
   background: var(--primary-color);
   padding: 0.5rem;
+  margin-top: 50%
+ 
 }
 
 .post {
