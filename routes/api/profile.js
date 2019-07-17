@@ -91,6 +91,8 @@ router.post(
       bio,
       status,
       offers,
+      events,
+      permanents,
       youtube,
       facebook,
       twitter,
@@ -109,7 +111,13 @@ router.post(
     if (imageUrl !== "") profileFields.imageUrl = imageUrl;
 
     if (offers) {
-      profileFields.offers = offers.split(",").map(skill => skill.trim());
+      profileFields.offers = offers.split(",").map(offer => offer.trim());
+    }
+    if (events) {
+      profileFields.events = events.split(",").map(event => event.trim());
+    }
+    if (permanents) {
+      profileFields.permanents = permanents.split(",").map(permanent => permanent.trim());
     }
     // build social object
     profileFields.social = {};
@@ -150,6 +158,8 @@ router.put("/update", [auth], async (req, res) => {
     company,
     website,
     offers,
+    events,
+    permanents,
     bio,
     status,
     youtube,
@@ -174,7 +184,13 @@ router.put("/update", [auth], async (req, res) => {
       if (offers) {
         profileDB.offers = offers.split(",").map(offer => offer.trim());
       }
+      if (events) {
+        profileDB.events = events.split(",").map(event => event.trim());
+      }
 
+      if (permanents) {
+        profileDB.permanents = permanents.split(",").map(permanent => permanent.trim());
+      }
       if (youtube) profileDB.social.youtube = youtube;
       if (twitter) profileDB.social.twitter = twitter;
       if (facebook) profileDB.social.facebook = facebook;

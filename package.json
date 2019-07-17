@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "leaflet": "^1.5.1",
     "mongoose": "^5.5.12",
+    "nodemon": "^1.19.1",
     "path": "^0.12.7",
     "react-leaflet": "^2.4.0",
     "request": "^2.88.0"

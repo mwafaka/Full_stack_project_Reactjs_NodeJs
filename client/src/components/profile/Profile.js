@@ -53,7 +53,7 @@ const Profile = ({
                 <ProfileAbout profile={profile} />
               </div>
 
-              <div className="profile-exp  p-2">
+              {/* <div className="profile-exp  p-2">
                 <h2 className="text-primary">Events</h2>
                 {profile.about && profile.about.length > 0 ? (
                   <Fragment>
@@ -66,9 +66,9 @@ const Profile = ({
                 ) : (
                   <h4 className="text-light">No Events credentials</h4>
                 )}
-              </div>
+              </div> */}
 
-              <div className="profile-edu  p-2">
+              {/* <div className="profile-edu  p-2">
                 <h2 className="text-primary">Offers Permanent</h2>
                 {profile.another && profile.another.length > 0 ? (
                   <Fragment>
@@ -80,11 +80,9 @@ const Profile = ({
                 ) : (
                   <h4 className="text-light">No Offers Permanent credentials</h4>
                 )}
-              </div>
+              </div> */}
 
-              {/* {profile.githubusername && (
-              <ProfileGithub username={profile.githubusername} />
-            )} */}
+             
             </div>
             <h2 className="gobackbtn">
               <i class="far fa-hand-point-left text-primary" />{" "}

@@ -192,6 +192,33 @@ export const addEvent = (formData, history) => async dispatch => {
   }
 };
 
+
+// Reservation
+export const reservation = (formData, history) => async dispatch => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    const res = await axios.put("/api/profile/reservation", formData, config);
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data
+    });
+    dispatch(setAlert("Reservation Added", "success"));
+    history.push("/dashboard");
+  } catch (error) {
+    const errors = error.response.data.errors;
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
+    }
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: error.response.statusText, status: error.response.status }
+    });
+  }
+};
 // Add offers permanent
 export const addEducation = (formData, history) => async dispatch => {
   try {

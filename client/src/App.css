@@ -53,7 +53,7 @@ img {
   border: 0.5px solid black;
 }
 .cc {
-  font-size: 50px;
+  font-size: 5.9vw;
   color: rgb(255, 254, 254);
   text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
 }
@@ -63,6 +63,7 @@ img {
   width: 100%;
   position: absolute;
   margin-top: 0.8%;
+  
 }
 .profile1 {
   margin-top: 10%;
@@ -302,6 +303,7 @@ img {
 /* Forms */
 .form .form-group {
   margin: 1.2rem 0;
+
 }
 
 .form .form-text {
@@ -321,6 +323,8 @@ img {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  border-radius: 3px
+
 }
 
 .form input[type="submit"],
@@ -562,9 +566,10 @@ button {
   margin-bottom: 0.5rem;
 }
 .large {
+  margin-top: 2rem;
   position: relative;
   font-family: "Montserrat", Arial, sans-serif;
-  font-size: calc(20px + 5vw);
+  font-size: calc(22px + 3vw);
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.02em;
@@ -574,8 +579,26 @@ button {
   white-space: nowrap;
   filter: blur(0.007em);
   animation: shake 2.5s linear forwards;
+  padding: 10px;
 }
-
+.large1 {
+  margin-top: 2rem;
+  margin-left: -2.5rem;
+  position: relative;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: calc(20px + 3vw);
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.15em #1da9cc;
+  user-select: none;
+  white-space: nowrap;
+  filter: blur(0.007em);
+  animation: shake 2.5s linear forwards;
+  padding: 10px;
+}
 h1 span {
   position: absolute;
   top: 0;
@@ -669,7 +692,7 @@ h1::after {
   }
 }
 /*  */
-h1 {
+/* h1 {
   position: relative;
   font-family: "Montserrat", Arial, sans-serif;
   font-size: calc(20px + 5vw);
@@ -682,7 +705,7 @@ h1 {
   white-space: nowrap;
   filter: blur(0.007em);
   animation: shake 2.5s linear forwards;
-}
+} */
 
 h1 span {
   position: absolute;
@@ -858,4 +881,14 @@ h1::after {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+}
+.toast{
+  font-size: 1.2rem;
+  
+  
+  
+}
+.ss{
+  display: inline-block;
+  width: 33%
 }

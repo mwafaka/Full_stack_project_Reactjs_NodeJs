@@ -72,7 +72,7 @@ const EditProfile = ({
   return (
     <div style={{ marginTop: "100px" }}>
       <Fragment>
-        <h1 className="large text-primary">
+        <h1 className="large text-primary" style={{fontSize:"5vw"}}>
           <i class="fas fa-user-edit" /> Edit Your Advertisment
         </h1>
         <p className="lead">

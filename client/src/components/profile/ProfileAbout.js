@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Card, Button, CardTitle, CardText, Row, Col, Toast, ToastHeader } from "reactstrap";
 const ProfileAbout = ({
   profile: {
     bio,
     offers,
+    events,
+    permanents,
     user: { name }
   }
 }) => (
@@ -18,6 +21,7 @@ const ProfileAbout = ({
     )}
     <h1 class="text-light large">Offers</h1>
     <div class="">
+    <h1 class="text-light large">Offers</h1>
       {offers.map((offer, index) => (
         <Row key={index} className="m-2">
           <Col sm="12 " className=" text-light">
@@ -33,25 +37,52 @@ const ProfileAbout = ({
               >
                 {offer}
               </CardText>
-              <Button style={{ fontSize: "25px", color: "white" }}>
+              <Link to="/reservation" className="btn btn-primary">
+              <i class="fas fa-bookmark"></i> Reservation
+      </Link>
+              {/* <Button style={{ fontSize: "25px", color: "white" }}>
                 reservation
-              </Button>
+              </Button> */}
             </Card>
           </Col>
-          {/* <Col sm="6">
-          <Card body>
-            <CardTitle>Special Title Treatment</CardTitle>
-            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-            <Button>Go somewhere</Button>
-          </Card>
-        </Col> */}
         </Row>
-        // <div key={index} className="p-1  text-light">
-        //   <i className="fa fa-map-marker primary" />
-        //   {skill}
-        // </div>
       ))}
     </div>
+   <h1 class="text-light large">Events</h1>
+ <div >
+   {events.map((event,index)=>(
+     <div className="ss">
+<div className=" p-6  my-1  rounded">
+<Toast key={index} className="bg-grey ">
+<ToastHeader icon="primary" className="text-primary">
+Event
+</ToastHeader>
+<div style={{fontSize:'1.5rem', fontFamily:"arial-black"}}>
+{event}
+</div>
+</Toast>
+</div>
+</div>
+  ))}
+</div>
+
+<h1 class=" large1">Offers Permanents</h1>
+ <div >
+   {permanents.map((permanent,index)=>(
+     <div className="ss">
+<div className=" p-6  my-1  rounded">
+<Toast key={index} className="bg-grey ">
+<ToastHeader icon="success" className="text-primary" style={{fontSize:"50%"}}>Permanents
+</ToastHeader>
+<div style={{fontSize:'1.5rem', fontFamily:"arial-black"}}>
+{permanent}
+</div>
+</Toast>
+</div>
+</div>
+  ))}
+</div>
+
   </div>
 );
 

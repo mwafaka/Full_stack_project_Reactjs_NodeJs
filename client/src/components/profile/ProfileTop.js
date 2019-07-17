@@ -8,12 +8,12 @@ const ProfileTop = ({
     location,
     website,
     social,
-    user: { name, avatar }
+    user: { name }
   }
 }) => {
   return (
     <div className="profile-top   p-2 text-light">
-      {/* <img className="bg-cover " src={avatar} alt="" /> */}
+      
       <h1 className="large ">{name}</h1>
       <p className="lead">
         {status} {company && <span> at {company}</span>}

@@ -13,12 +13,12 @@ class CreateProfile extends Component {
     latlng: "",
     status: "",
     offers: "",
-    githubusername: "",
+    permanents:"",
+    events:"",
     imageUrl: "",
     bio: "",
     twitter: "",
     facebook: "",
-    linkedin: "",
     youtube: "",
     instagram: "",
     displaySocialInputs: false,
@@ -91,6 +91,8 @@ class CreateProfile extends Component {
       website,
       status,
       offers,
+      permanents,
+      events,
       imageUrl,
       bio,
       twitter,
@@ -178,7 +180,7 @@ class CreateProfile extends Component {
             <div className="form-group">
               <input
                 type="text"
-                placeholder="* "
+                placeholder="Add your Offers "
                 name="offers"
                 value={offers}
                 onChange={e => this.onChange(e)}
@@ -190,9 +192,9 @@ class CreateProfile extends Component {
             <div className="form-group">
               <input
                 type="text"
-                placeholder="* "
-                name="offers"
-                value={offers}
+                placeholder="Add Events "
+                name="events"
+                value={events}
                 onChange={e => this.onChange(e)}
               />
               <small className="form-text">
@@ -202,9 +204,9 @@ class CreateProfile extends Component {
             <div className="form-group">
               <input
                 type="text"
-                placeholder="* "
-                name="offers"
-                value={offers}
+                placeholder="Offers-Permanents "
+                name="permanents"
+                value={permanents}
                 onChange={e => this.onChange(e)}
               />
               <small className="form-text">

@@ -25,6 +25,12 @@ const ProfileSchema = new mongoose.Schema({
   offers: {
     type: [String]
   },
+  events: {
+    type: [String]
+  },
+  permanents: {
+    type: [String]
+  },
   bio: {
     type: String
   },
