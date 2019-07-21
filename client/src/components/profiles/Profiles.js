@@ -18,7 +18,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <Fragment>
+        
           <div className="profiles">
             {profiles.length > 0 ? (
               profiles.map(profile => (
@@ -28,7 +28,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
               <h4>No profile found...</h4>
             )}
           </div>
-        </Fragment>
+   
       )}
     </Fragment>
   );

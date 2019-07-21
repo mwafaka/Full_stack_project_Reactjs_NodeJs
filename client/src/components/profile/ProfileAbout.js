@@ -25,25 +25,25 @@ const ProfileAbout = ({
       {offers.map((offer, index) => (
         <Row key={index} className="m-2">
           <Col sm="12 " className=" text-light">
-            <Card
+            <div
               body
               inverse
               style={{ backgroundColor: "#333", borderColor: "#333" }}
             >
-              <CardTitle>Special Healthy food</CardTitle>
+              
               <CardText
                 className="
              blue text-primary"
               >
                 {offer}
               </CardText>
-              <Link to="/reservation" className="btn btn-primary">
+              <Link to="/reservation" className="btn btn-primary" >
               <i class="fas fa-bookmark"></i> Reservation
       </Link>
               {/* <Button style={{ fontSize: "25px", color: "white" }}>
                 reservation
               </Button> */}
-            </Card>
+            </div>
           </Col>
         </Row>
       ))}
@@ -51,16 +51,34 @@ const ProfileAbout = ({
    <h1 class="text-light large">Events</h1>
  <div >
    {events.map((event,index)=>(
-     <div className="ss">
-<div className=" p-6  my-1  rounded">
-<Toast key={index} className="bg-grey ">
-<ToastHeader icon="primary" className="text-primary">
-Event
-</ToastHeader>
-<div style={{fontSize:'1.5rem', fontFamily:"arial-black"}}>
-{event}
-</div>
-</Toast>
+//      <div className="ss">
+// <div className=" p-6  my-1  rounded">
+// <Toast key={index} className="bg-grey ">
+// <ToastHeader icon="primary" className="text-primary">
+// Event
+// </ToastHeader>
+// <div style={{fontSize:'1.5rem', fontFamily:"arial-black"}}>
+// {event}
+// </div>
+// </Toast>
+// </div>
+// </div>
+
+<div class="row">
+<div class="col s12 m7">
+  <div class="card">
+    <div class="card-image">
+      <img src={"../profile/../components/img/showcase.jpg"}/>
+      <span class="card-title"> {event}</span>
+    </div>
+    <div class="card-content">
+      <p>I am a very simple card. I am good at containing small bits of information.
+      I am convenient because I require little markup to use effectively.</p>
+    </div>
+    <div class="card-action">
+      <a href="#">This is a link</a>
+    </div>
+  </div>
 </div>
 </div>
   ))}
