@@ -48,7 +48,7 @@ img {
   background-color: rgb(97, 92, 92); 
 }  */
 .profiles {
-  margin-top: 8%;
+  margin-top: 10%;
   color: white;
  display: flex;
  flex-wrap:wrap;
@@ -56,10 +56,10 @@ img {
   
 }
 
-.jumbotron {
+/* .jumbotron {
   background-color: #58616a;
-  /*border: 0.5px solid black;*/
-}
+  border: 0.5px solid black;
+} */
 .cc {
   font-size: 5.9vw;
   color: rgb(255, 254, 254);
@@ -410,11 +410,17 @@ button {
 }
 
 /* Landing Page */
-/* .landing {
-  position: relative;
+ .card-image {
+   width: 100%;
   background: url("./img/showcase.jpg") no-repeat center center/cover;
-  height: 100vh;
-} */
+  height: 30vh;
+
+} 
+.card-image1{
+  width: 100%;
+  background: url("./img/No-image-available.jpg") no-repeat center center/cover;
+  height: 30vh;
+}
  #root {
   
 align-items: center
@@ -802,7 +808,7 @@ h1::after {
 
   .profiles{
     margin:auto;
-margin-left: 10%;
+
     color: white;
    display: inline;
   }
@@ -943,7 +949,7 @@ img {
   .image {
     opacity: 0;
     animation: ImageFadeIn .8s 1.4s forwards;
-    height: 45vh;
+    height: 19.5rem;
   }
 
   .title {
