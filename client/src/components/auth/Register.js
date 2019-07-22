@@ -75,7 +75,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           </div>
           <input type="submit" className="btn btn-dark" value="Register" />
         </form>
-        <p className="my-1 text-light">
+        <p className="my-1 text-dark">
           Already have an account? <Link to="/login">Sign In</Link>
         </p>
       </Fragment>

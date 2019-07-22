@@ -223,13 +223,13 @@ class CreateProfile extends Component {
             </form>
             <div className="form-group">
               <textarea
-                placeholder="A short bio of yourself"
+                placeholder="Description"
                 name="bio"
                 value={bio}
                 onChange={e => this.onChange(e)}
               />
               <small className="form-text">
-                Tell us a little about yourself
+                Tell us a little about Your Restaurant
               </small>
             </div>
             <div className="my-2">

@@ -12,7 +12,7 @@ const ProfileTop = ({
   }
 }) => {
   return (
-    <div className="profile-top   p-2 text-light">
+    <div className="profile-top   p-2 text-primary">
       
       <h1 className="large ">{name}</h1>
       <p className="lead">

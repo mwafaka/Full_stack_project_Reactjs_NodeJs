@@ -14,7 +14,7 @@ const ProfileAbout = ({
   <div style={{ textAlign: "center " }}>
     {bio && (
       <Fragment>
-        <h2 class="text-light">{name.trim().split(" ")[0]}s Bio</h2>
+        <h2 class="text-dark">{name.trim().split(" ")[0]}s Bio</h2>
         <p>{bio}</p>
         <div class="line" />
       </Fragment>

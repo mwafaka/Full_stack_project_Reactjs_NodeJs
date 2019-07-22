@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 const ProfileItem = ({ profile }) => {
   const {
     user: { _id, name, imageUrl } = {},
+    bio,
     status,
     company,
     location
@@ -55,7 +56,7 @@ const ProfileItem = ({ profile }) => {
     
      <div className="content">
        <h1 className="title">{name}</h1>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
+     <p>{bio}</p>
     </div>
     <p className="lead">
           
