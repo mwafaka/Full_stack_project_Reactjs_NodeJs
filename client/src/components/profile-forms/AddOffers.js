@@ -2,56 +2,62 @@ import React, { Fragment, useState } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addEvent } from "../../actions/profile";
+import { addOffer } from "../../actions/profile";
 
-const AddEvent = ({ addEvent, history }) => {
+const AddOffer = ({ addOffer, history }) => {
   const [formData, setFormData] = useState({
-    title: "",
-    imageUrl:"",
+    offer: "",
+    from: "",
     description: "",
+    imageUrl:"",
     fileImage:[]
   });
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const {
-    title,
-    imageUrl,
-    description
-  } = formData;
+  const {offer,from,imageUrl, description } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-   const selectImage = e => {
+    const selectImage = e => {
       console.log("event=>", e.target.files[0]);
      setFormData({
         fileImage: [e.target.files[0]]
       });
     };
+
   return (
     <div style={{ marginTop: "100px" }}>
       <Fragment>
-        <h1 className="large text-primary">Add Offer Permanent 
-    </h1>
+        <h1 className="large text-primary">Add  Offer</h1>
         <p className="lead">
-        <i class="fas fa-plus-square"></i> Add any Permanent 
-          Event 
+        <i class="fas fa-plus-square"></i> Add Currentl Offer
         </p>
-        
+      
         <form
           className="form"
           onSubmit={e => {
             e.preventDefault();
-            addEvent(formData, history);
+            addOffer(formData, history);
           }}
         >
           <div className="form-group">
             <input
               type="text"
-              placeholder="title"
-              name="title"
-              value={title}
+              placeholder=" offer Title"
+              name="offer"
+              value={offer}
               onChange={e => onChange(e)}
-              
+              required
+            />
+          </div>
+         
+          <div className="form-group">
+            <h4> Date</h4>
+            <input
+              type="date"
+              name="from"
+              value={from}
+              onChange={e => onChange(e)}
             />
           </div>
           <form
@@ -82,11 +88,11 @@ const AddEvent = ({ addEvent, history }) => {
   );
 };
 
-AddEvent.propTypes = {
-  addEvent: PropTypes.func.isRequired
+addOffer.propTypes = {
+  addOffer: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { addEvent }
-)(withRouter(AddEvent));
+  { addOffer }
+)(withRouter(AddOffer));

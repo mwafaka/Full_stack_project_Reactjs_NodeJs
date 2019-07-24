@@ -60,7 +60,7 @@ const ProfileAbout = ({
       I am convenient because I require little markup to use effectively.</p>
     </div>
     <div class="card-action">
-      <a href="#">This is a link</a>
+      {/* <a href="#">This is a link</a> */}
     </div>
   </div>
 </div>
@@ -71,21 +71,11 @@ const ProfileAbout = ({
 <h1 class=" large1">Offers Permanents</h1>
  <div  style={{display:"flex"}}>
    {permanents.map((permanent,index)=>(
-//      <div className="ss">
-// <div className=" p-6  my-1  rounded">
-// <Toast key={index} className="bg-grey ">
-// <ToastHeader icon="success" className="text-primary" style={{fontSize:"50%"}}>Permanents
-// </ToastHeader>
-// <div style={{fontSize:'1.5rem', fontFamily:"arial-black"}}>
-// {permanent}
-// </div>
-// </Toast>
-// </div>
-// </div>
+
 <div key={index} class="" style={{width:"33%",margin:"1%"}}>
 <div class="" >
   <div class="card"  style={{width:"100%",padding:"0.2%" }}>
-    <div class="">
+    <div class="card-image2">
       
      
     </div>
@@ -94,7 +84,7 @@ const ProfileAbout = ({
       <p></p>
     </div>
     <div class="card-action">
-      <a href="#">This is a link</a>
+      {/* <a href="#">This is a link</a> */}
     </div>
   </div>
 </div>

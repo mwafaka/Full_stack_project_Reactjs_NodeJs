@@ -26,7 +26,7 @@ const Dashboard = ({
         <h1 className="large text-primary">
         <i class="fas fa-tachometer-alt"></i> Dashboard</h1>
         <p className="lead text-primary">
-          <i className="fas fa-user text-primary" /> Welcome {auth.user && auth.user.name}
+        <i class="fas fa-utensils"/>  {' '}  {auth.user && auth.user.name}
         </p>
         {profile ? (
           <Fragment>
@@ -34,15 +34,14 @@ const Dashboard = ({
             {/* {profile && profile.about && <Experience about={profile.about} />}
             {profile && profile.education && (
               <Education education={profile.education} /> */}
-            )}
-
+         
             <div className="my-2">
               <button className="btn btn-dark" onClick={() => deleteAccount()}>
                 <i
                   className="fas
            fa-user-minus"
-                />
-                Delete My Account{" "}
+                /> {' '}
+                Delete 
               </button>
             </div>
           </Fragment>

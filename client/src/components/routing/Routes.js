@@ -6,8 +6,8 @@ import Alert from "../layout/Alert";
 import Dashboard from "../dashboard/Dashboard";
 import createProfile from "../profile-forms/CreateProfile";
 import EditProfile from "../profile-forms/EditProfile";
+import AddOffer from "../profile-forms/AddOffers";
 import AddEvent from "../profile-forms/AddEvents";
-import AddEducation from "../profile-forms/AddEducation";
 import Reservation from "../profile-forms/Reservation";
 import Profiles from "../profiles/Profiles";
 import Profile from "../profile/Profile";
@@ -28,8 +28,8 @@ const Routes = () => {
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/create-profile" component={createProfile} />
         <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+        <PrivateRoute exact path="/add-offer" component={AddOffer} />
         <PrivateRoute exact path="/add-event" component={AddEvent} />
-        <PrivateRoute exact path="/add-education" component={AddEducation} />
         <PrivateRoute exact path="/reservation" component={Reservation} />
         <PrivateRoute exact path="/posts" component={Posts} />
         <PrivateRoute exact path="/posts/:id" component={Post} />

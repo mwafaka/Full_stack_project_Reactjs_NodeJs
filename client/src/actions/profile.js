@@ -165,20 +165,20 @@ export const updateProfile = (
   }
 };
 
-// Add Event
-export const addEvent = (formData, history) => async dispatch => {
+// Add Offer
+export const addOffer = (formData, history) => async dispatch => {
   try {
     const config = {
       headers: {
         "Content-Type": "application/json"
       }
     };
-    const res = await axios.put("/api/profile/event", formData, config);
+    const res = await axios.put("/api/profile/offer", formData, config);
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
     });
-    dispatch(setAlert("Event Added", "success"));
+    dispatch(setAlert("Offer Added", "success"));
     history.push("/dashboard");
   } catch (error) {
     const errors = error.response.data.errors;
@@ -219,20 +219,20 @@ export const reservation = (formData, history) => async dispatch => {
     });
   }
 };
-// Add offers permanent
-export const addEducation = (formData, history) => async dispatch => {
+// Add Event
+export const addEvent = (formData, history) => async dispatch => {
   try {
     const config = {
       headers: {
         "Content-Type": "application/json"
       }
     };
-    const res = await axios.put("/api/profile/education", formData, config);
+    const res = await axios.put("/api/profile/event", formData, config);
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
     });
-    dispatch(setAlert("Education Added", "success"));
+    dispatch(setAlert("Event Added", "success"));
     history.push("/dashboard");
   } catch (error) {
     const errors = error.response.data.errors;

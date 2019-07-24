@@ -26,7 +26,7 @@ const Reservation = ({ reservation, history }) => {
       <Fragment>
         <h1 className="large text-primary" style={{marginBottom:"3%", fontSize:"5.9vw"}}>Book your 
         Place</h1>
-        <p className="lead text-light ">
+        <p className="lead text-dark ">
         <i class="fas fa-address-card text-primary"></i> Please fill out the following spaces to reserve  
         </p>
       

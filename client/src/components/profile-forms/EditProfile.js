@@ -5,9 +5,6 @@ import { connect } from "react-redux";
 import { updateProfile, getCurrentProfile } from "../../actions/profile";
 
 const EditProfile = ({
-  state = {
-    imageUrl: ""
-  },
   profile: { profile, loading },
   updateProfile,
   history,
@@ -18,15 +15,12 @@ const EditProfile = ({
     website: "",
     status: "",
     offers: "",
-    githubusername: "",
     bio: "",
     twitter: "",
     facebook: "",
-    linkedin: "",
     youtube: "",
     instagram: ""
   });
-
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
   useEffect(() => {
     getCurrentProfile();
@@ -50,14 +44,11 @@ const EditProfile = ({
   const {
     company,
     website,
-    imageUrl,
     status,
     offers,
-    githubusername,
     bio,
     twitter,
     facebook,
-    linkedin,
     youtube,
     instagram
   } = formData;
@@ -135,18 +126,6 @@ const EditProfile = ({
             </small>
           </div>
 
-          {/* <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={e => onChange(e)}
-          /> */}
-          {/* <small className="form-text">
-          If you want your latest repos and a Github link, include your username
-        </small> */}
-
           <div className="form-group">
             <textarea
               placeholder="A short bio of yourself"
@@ -202,18 +181,6 @@ const EditProfile = ({
                   onChange={e => onChange(e)}
                 />
               </div>
-
-              {/* <div className="form-group social-input">
-              <i className="fab fa-linkedin fa-2x" />
-              <input
-                type="text"
-                placeholder="Linkedin URL"
-                name="linkedin"
-                value={linkedin}
-                onChange={e => onChange(e)}
-              />
-            </div> */}
-
               <div className="form-group social-input">
                 <i className="fab fa-instagram fa-2x" />
                 <input
