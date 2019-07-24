@@ -30,10 +30,10 @@ const AddEvent = ({ addEvent, history }) => {
   return (
     <div style={{ marginTop: "100px" }}>
       <Fragment>
-        <h1 className="large text-primary">Add Offer Permanent 
+        <h1 className="large text-primary">Add Events
     </h1>
         <p className="lead">
-        <i class="fas fa-plus-square"></i> Add any Permanent 
+        <i class="fas fa-plus-square"></i> Add any 
           Event 
         </p>
         

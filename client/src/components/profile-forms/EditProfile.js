@@ -70,7 +70,7 @@ const EditProfile = ({
           <i className="fas fa-user" /> Let's get some information to make your
           profile stand out
         </p>
-        <small>* = required field</small>
+       
         <form className="form" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <select name="status" value={status} onChange={e => onChange(e)}>
@@ -85,7 +85,7 @@ const EditProfile = ({
               <option value="Italian">Italian</option>
             </select>
             <small className="form-text">
-              Give us an idea About your Restaurant
+              Select
             </small>
           </div>
           <div className="form-group">
@@ -97,7 +97,7 @@ const EditProfile = ({
               onChange={e => onChange(e)}
             />
             <small className="form-text">
-              Could be your own company or one you work for
+              Name of your Restaurant 
             </small>
           </div>
           <div className="form-group">
@@ -109,7 +109,7 @@ const EditProfile = ({
               onChange={e => onChange(e)}
             />
             <small className="form-text">
-              Could be your own or a company website
+              Restaurant  website
             </small>
           </div>
 
@@ -133,7 +133,7 @@ const EditProfile = ({
               value={bio}
               onChange={e => onChange(e)}
             />
-            <small className="form-text">Tell us a little about yourself</small>
+            <small className="form-text">Tell us a little about Restaurant </small>
           </div>
 
           <div className="my-2">
@@ -142,7 +142,7 @@ const EditProfile = ({
               type="button"
               className="btn btn-light"
             >
-              Add Social Network Links
+               Social Network Links
             </button>
             <span>Optional</span>
           </div>

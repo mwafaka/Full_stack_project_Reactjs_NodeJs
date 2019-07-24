@@ -196,12 +196,12 @@ export const addOffer = (formData, history) => async dispatch => {
 // Reservation
 export const reservation = (formData, history) => async dispatch => {
   try {
-    const config = {
-      headers: {
-        "Content-Type": "application/json"
-      }
-    };
-    const res = await axios.put("/api/profile/reservation", formData, config);
+    // const config = {
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   }
+    // };
+    const res = await axios.put("/api/profile/reservation", formData);
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
