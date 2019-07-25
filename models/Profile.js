@@ -35,55 +35,37 @@ const ProfileSchema = new mongoose.Schema({
     type: String
   },
 
-  about: [
+  offer: [
     {
-      event: {
+      title: {
         type: String
       },
-      company: {
-        type: String
-      },
-      location: {
-        type: String
-      },
-      from: {
+     
+      date: {
         type: Date
       },
-      to: {
-        type: Date
+      imageUrl:{
+        type:String
       },
-      current: {
-        type: Boolean,
-        default: false
-      },
+     
       description: {
         type: String
       }
     }
   ],
-  another: [
+  event: [
     {
-      school: {
+      title: {
         type: String
       },
-      degree: {
-        type: String
+      imageUrl:{
+        type:String
       },
-      fieldofstudy: {
-        type: String,
-        required: true
-      },
-      from: {
-        type: Date,
-        required: true
-      },
-      to: {
+     
+      date: {
         type: Date
       },
-      current: {
-        type: Boolean,
-        default: false
-      },
+     
       description: {
         type: String
       }
