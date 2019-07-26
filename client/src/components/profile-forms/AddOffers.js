@@ -6,15 +6,15 @@ import { addOffer } from "../../actions/profile";
 
 const AddOffer = ({ addOffer, history }) => {
   const [formData, setFormData] = useState({
-    offer: "",
-    from: "",
+    title: "",
+    date: "",
     description: "",
     imageUrl:"",
     fileImage:[]
   });
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const {offer,from,imageUrl, description } = formData;
+  const {title,date,imageUrl, description } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -44,8 +44,8 @@ const AddOffer = ({ addOffer, history }) => {
             <input
               type="text"
               placeholder=" offer Title"
-              name="offer"
-              value={offer}
+              name="title"
+              value={title}
               onChange={e => onChange(e)}
               required
             />
@@ -55,8 +55,8 @@ const AddOffer = ({ addOffer, history }) => {
             <h4> Date</h4>
             <input
               type="date"
-              name="from"
-              value={from}
+              name="date"
+              value={date}
               onChange={e => onChange(e)}
             />
           </div>
@@ -96,3 +96,7 @@ export default connect(
   null,
   { addOffer }
 )(withRouter(AddOffer));
+
+
+
+

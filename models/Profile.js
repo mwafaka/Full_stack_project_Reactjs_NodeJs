@@ -40,15 +40,13 @@ const ProfileSchema = new mongoose.Schema({
       title: {
         type: String
       },
-     
       date: {
         type: Date
       },
       imageUrl:{
         type:String
       },
-     
-      description: {
+     description: {
         type: String
       }
     }
@@ -61,11 +59,9 @@ const ProfileSchema = new mongoose.Schema({
       imageUrl:{
         type:String
       },
-     
       date: {
         type: Date
       },
-     
       description: {
         type: String
       }
@@ -81,7 +77,6 @@ const ProfileSchema = new mongoose.Schema({
     facebook: {
       type: String
     },
-
     instagram: {
       type: String
     }

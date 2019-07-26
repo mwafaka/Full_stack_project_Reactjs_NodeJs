@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Card, Button, CardTitle, CardText, Row, Col, Toast, ToastHeader } from "reactstrap";
+
 const ProfileAbout = ({
   profile: {
     bio,

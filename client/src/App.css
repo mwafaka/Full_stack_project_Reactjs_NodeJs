@@ -48,14 +48,22 @@ img {
   background-color: rgb(97, 92, 92); 
 }  */
 .profiles {
-  margin-top: 10%;
+  margin-top: 0.75%;
   color: white;
  display: flex;
  flex-wrap:wrap;
 
   
 }
-
+.SearchForm{
+  width: 96%;
+  margin-top: 7%;
+  border:blue solid 2px;
+  margin-left: 3%;
+  border-radius: 5px;
+  box-shadow: 0 0 0.25em #2673bb
+  
+}
 /* .jumbotron {
   background-color: #58616a;
   border: 0.5px solid black;
@@ -808,9 +816,9 @@ h1::after {
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
-    margin-top: 8rem;
+    margin-top: 6.5rem;   
   }
-
+  
   .profiles{
     margin:auto;
 
@@ -820,17 +828,13 @@ h1::after {
   .hide-sm {
     display: none;
   }
-
   /* Text Styles */
   .x-large {
     font-size: 1rem;
   }
-
   .lead {
-    font-size: 1rem;
-    
+    font-size: 1rem; 
   }
-
   /* Navbar */
   .navbar {
     display: block;
@@ -937,6 +941,7 @@ img {
   border-radius: 6px;
   padding: 2rem;
   color: #aaa;
+  margin: 10%;
   box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
     0 0 2rem rgba(0,0,0,0.2);
   overflow: hidden;
@@ -954,7 +959,7 @@ img {
   .image {
     opacity: 0;
     animation: ImageFadeIn .8s 1.4s forwards;
-    height: 19.5rem;
+    height: 17.9rem;
   }
 
   .title {
@@ -993,3 +998,9 @@ img {
   50% { opacity: 1; filter: blur(2px); }
   100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
 }
+
+
+
+
+
+/*   searchForm styling   */

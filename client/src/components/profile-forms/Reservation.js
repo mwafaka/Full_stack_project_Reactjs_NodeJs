@@ -6,9 +6,8 @@ import { reservation } from "../../actions/profile";
 
 const Reservation = ({ reservation, history }) => {
   const [formData, setFormData] = useState({
-    company: "",
+   
     event: "",
-    location: "",
     from: "",
     to: "",
     current: false,
@@ -17,7 +16,7 @@ const Reservation = ({ reservation, history }) => {
   });
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { company, event, location, from, to, current, description,number } = formData;
+  const {  event, from, to, current, description,number } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -47,25 +46,8 @@ const Reservation = ({ reservation, history }) => {
               required
             />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Company"
-              name="company"
-              value={company}
-              onChange={e => onChange(e)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Location"
-              name="location"
-              value={location}
-              onChange={e => onChange(e)}
-            />
-          </div>
+         
+         
           <div className="form-group">
             <input
               type="number"
@@ -84,37 +66,12 @@ const Reservation = ({ reservation, history }) => {
               onChange={e => onChange(e)}
             />
           </div>
-          {/* <div className="form-group">
-            <p>
-              <input
-                type="checkbox"
-                name="current"
-                checked={current}
-                value={current}
-                onChange={e => {
-                  setFormData({ ...formData, current: !current });
-                  toggleDisabled(!toDateDisabled);
-                }}
-              />{" "}
-              Current Job
-            </p>
-          </div> */}
-          {/* <div className="form-group">
-            <h4>To Date</h4>
-            <input
-              type="date"
-              name="to"
-              value={to}
-              onChange={e => onChange(e)}
-              disabled={toDateDisabled ? "disabled" : ""}
-            />
-          </div> */}
           <div className="form-group">
             <textarea
               name="description"
               cols="30"
               rows="5"
-              placeholder=" Description"
+              placeholder="Note..."
               value={description}
               onChange={e => onChange(e)}
             />

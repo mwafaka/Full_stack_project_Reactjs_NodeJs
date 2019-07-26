@@ -36,12 +36,8 @@ const Dashboard = ({
               <Education education={profile.education} /> */}
          
             <div className="my-2">
-              <button className="btn btn-dark" onClick={() => deleteAccount()}>
-                <i
-                  className="fas
-           fa-user-minus"
-                /> {' '}
-                Delete 
+              <button className="btn btn-danger" onClick={() => deleteAccount()}>
+              <i class="fas fa-user-minus"></i>  Delete 
               </button>
             </div>
           </Fragment>

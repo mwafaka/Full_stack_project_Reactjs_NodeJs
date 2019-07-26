@@ -6,11 +6,11 @@ import Spinner from "../layout/Spinner";
 import ProfileTop from "./ProfileTop";
 import Map from "./Map";
 import ProfileAbout from "./ProfileAbout";
-import ProfileEducation from "./ProfileEducation";
-import ProfileExperience from "./ProfileExperience";
+import ProfileOffer from "./ProfileOffer";
+import ProfileExperience from "./ProfileEvent";
 
 import { getProfileById } from "../../actions/profile";
-import { Toast, ToastBody, ToastHeader } from "reactstrap";
+
 
 const Profile = ({
   getProfileById,
@@ -52,37 +52,6 @@ const Profile = ({
               >
                 <ProfileAbout profile={profile} />
               </div>
-
-              {/* <div className="profile-exp  p-2">
-                <h2 className="text-primary">Events</h2>
-                {profile.about && profile.about.length > 0 ? (
-                  <Fragment>
-                    {profile.about &&
-                      profile.about.map(about => (
-                        <ProfileExperience key={about._id} about={about} />
-                      ))}
-                    {profile.latlng}
-                  </Fragment>
-                ) : (
-                  <h4 className="text-light">No Events credentials</h4>
-                )}
-              </div> */}
-
-              {/* <div className="profile-edu  p-2">
-                <h2 className="text-primary">Offers Permanent</h2>
-                {profile.another && profile.another.length > 0 ? (
-                  <Fragment>
-                    {profile.another &&
-                      profile.another.map(another => (
-                        <ProfileEducation key={another._id} another={another} />
-                      ))}
-                  </Fragment>
-                ) : (
-                  <h4 className="text-light">No Offers Permanent credentials</h4>
-                )}
-              </div> */}
-
-             
             </div>
             <h2 className="gobackbtn">
               <i class="far fa-hand-point-left text-primary" />{" "}

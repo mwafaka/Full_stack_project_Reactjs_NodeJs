@@ -13,33 +13,7 @@ const ProfileItem = ({ profile }) => {
     location
   } = profile;
   return (
-    // <div>
-    //   <Jumbotron>
-    //     <h2 className="display-3 cc">{name}</h2>
-    //     <p className="lead">
-    //       {status}
-    //       {company && <span>bat {company} </span>}
-    //     </p>
-    //     <img
-    //       src={"/images/" + profile.imageUrl}
-    //       width="200px"
-    //       height="300px"
-    //       alt=""
-    //       object-fit='cover'
-    //     />
-
-    //     <hr className="my-2" />
-    //     <p className="my-1">
-    //       <i class="fa fa-home" /> {location}
-    //     </p>
-    //     <p className="lead">
-    //       <Button color="dark">Learn More</Button>
-    //       <Link to={`/profile/${_id}`} className="btn btn-white">
-    //         View
-    //       </Link>
-    //     </p>
-    //   </Jumbotron>
-    // </div>
+   
     <container className="container1">
   <div className="card">
       <div className="image-container">
