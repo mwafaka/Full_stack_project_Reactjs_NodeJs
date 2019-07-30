@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import ProfileItem from "./ProfileItem";
-// import CustomMap from '../open-street-map/CustomMap'
 
 import { getProfiles } from "../../actions/profile";
+
 
 
 
@@ -18,13 +18,15 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
 // / Search Form / 
 
   const [search, setSearch] = useState('');
+
    const updateSearch = (e) => {
-setSearch({search:e.target.value.substr(0,20)})
+setSearch(e.target.value.substr(0,20))
   }
 
-  let filteredProfiles =profiles.filter((proflie) =>{
-    return proflie.status.indexOf(search)!== -1;
+  let filteredProfiles = profiles.filter((profile) => { 
+   return profile.status.indexOf(search)!== -1
   })
+  
 
   
   return (
@@ -33,7 +35,7 @@ setSearch({search:e.target.value.substr(0,20)})
         <Spinner />
       ) : (
        <div>
-             <input type='text' vlaue={search} onChange={e => updateSearch(e)} className='SearchForm'/>
+             <input type='text' value={search} name='search' onChange={e => updateSearch(e)} className='SearchForm'/>
        
           <div className="profiles">
             {filteredProfiles.length > 0 ? (

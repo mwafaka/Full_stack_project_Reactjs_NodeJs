@@ -34,19 +34,7 @@ img {
   width: 100%;
 }
 
-/* Utilities */
- /* .container {
-  
- 
-   margin: auto;
-  overflow: hidden;
-  display: flexbox;
-  
-  height: auto; 
-  margin-top: 6rem;
-  margin-bottom: 3rem;
-  background-color: rgb(97, 92, 92); 
-}  */
+
 .profiles {
   margin-top: 0.75%;
   color: white;
@@ -959,7 +947,7 @@ img {
   .image {
     opacity: 0;
     animation: ImageFadeIn .8s 1.4s forwards;
-    height: 17.9rem;
+    height: 18.50rem;
   }
 
   .title {

@@ -40,7 +40,7 @@ export const getCurrentProfile = () => async dispatch => {
 };
 // Get all Profiles
 export const getProfiles = () => async dispatch => {
-  dispatch({ type: CLEAR_PROFILE });
+  // dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get("/api/profile");
 
@@ -75,22 +75,22 @@ export const getProfileById = userId => async dispatch => {
   }
 };
 
-// Get  Github repos
-export const getGithubRepos = username => async dispatch => {
-  try {
-    const res = await axios.get(`/api/profile/github/${username}`);
+// // Get  Github repos
+// export const getGithubRepos = username => async dispatch => {
+//   try {
+//     const res = await axios.get(`/api/profile/github/${username}`);
 
-    dispatch({
-      type: GET_REPOS,
-      payload: res.data
-    });
-  } catch (error) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: error.response.statusText, status: error.response.status }
-    });
-  }
-};
+//     dispatch({
+//       type: GET_REPOS,
+//       payload: res.data
+//     });
+//   } catch (error) {
+//     dispatch({
+//       type: PROFILE_ERROR,
+//       payload: { msg: error.response.statusText, status: error.response.status }
+//     });
+//   }
+// };
 
 // Create profile
 export const createProfile = (
