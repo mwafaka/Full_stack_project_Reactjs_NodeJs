@@ -35,7 +35,7 @@ setSearch(e.target.value.substr(0,20))
         <Spinner />
       ) : (
        <div>
-             <input type='text' value={search} name='search' onChange={e => updateSearch(e)} className='SearchForm'/>
+             <input type='text' value={search} name='search' placeholder=" Find your Favorite Restaurant" onChange={e => updateSearch(e)} className='SearchForm'/>
        
           <div className="profiles">
             {filteredProfiles.length > 0 ? (
