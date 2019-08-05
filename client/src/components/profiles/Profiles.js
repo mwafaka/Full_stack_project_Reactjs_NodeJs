@@ -24,7 +24,7 @@ setSearch(e.target.value.substr(0,20))
   }
 
   let filteredProfiles = profiles.filter((profile) => { 
-   return profile.status.indexOf(search)!== -1
+   return profile.status.toLowerCase().indexOf(search)!== -1
   })
   
 

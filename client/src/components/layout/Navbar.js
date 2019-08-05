@@ -10,9 +10,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to="/profiles">Restaurants</Link>
       </li>
-      <li>
-        {/* <Link to="/posts">Posts</Link> */}
-      </li>
+     
       <li>
         <Link to="/dashboard">
           <i className="fas fa-user" />{" "}
@@ -31,6 +29,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to="/profiles">Restaurants</Link>
+      </li>
+      <li>
+        <Link to="/about">About</Link>
       </li>
       <li>
         <Link to="/register">Register</Link>

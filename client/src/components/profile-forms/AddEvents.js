@@ -11,7 +11,7 @@ const AddEvent = ({ addEvent, history }) => {
     description: "",
     fileImage:[]
   });
-  const [toDateDisabled, toggleDisabled] = useState(false);
+  // const [toDateDisabled, toggleDisabled] = useState(false);
 
   const {
     title,

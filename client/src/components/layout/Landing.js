@@ -11,12 +11,7 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing ">
       <div className="dark-overlay ">
         <div className="landing-inner ">
-          {/* <h1 className="x-large ">
-            <i className="fa fa-map-signs " aria-hidden="true">
-              {" "}
-              Found In <span className="dark">B</span>erlin
-            </i>{" "}
-          </h1> */}
+         
           <p className="lead1">
             Find a Restaurant In Berlin or Advertise your own with us for Free
           </p>
@@ -28,18 +23,7 @@ const Landing = ({ isAuthenticated }) => {
               Login
             </Link>
           </div>
-          {/* <div className="buttons">
-            <Link to="/login" className="btn btn-lg btn-danger m-1">
-              <i class="fa fa-google">Sign With Google</i>
-            </Link>
-          </div>
-          <div className="buttons">
-            <Link to="/login" className="btn btn-lg btn-primary">
-              <i class="fa fa-facebook-official" aria-hidden="true">
-                Sign With FaceBoock
-              </i>
-            </Link>
-          </div> */}
+         
         </div>
       </div>
     </section>

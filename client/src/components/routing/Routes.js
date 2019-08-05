@@ -14,6 +14,7 @@ import Profile from "../profile/Profile";
 import Posts from "../posts/Posts";
 import Post from "../post/Post";
 import notFound from "../layout/notFound";
+import about from "../layout/About";
 import PrivateRoute from "../routing/PrivateRoute";
 
 const Routes = () => {
@@ -23,6 +24,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/about" component={about} />
         <Route exact path="/profiles" component={Profiles} />
         <Route exact path="/profile/:id" component={Profile} />
         <Route exact path="/reservation" component={Reservation} />
@@ -34,6 +36,7 @@ const Routes = () => {
         <PrivateRoute exact path="/posts" component={Posts} />
         <PrivateRoute exact path="/posts/:id" component={Post} />
         <Route component={notFound} />
+       
       </Switch>
     </section>
   );

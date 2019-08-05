@@ -104,14 +104,14 @@ class CreateProfile extends Component {
     return (
       <div style={{ marginTop: "100px" }}>
         <Fragment>
-          <h1 className="large text-primary">
+          <h1 className="large text-primary "style={{fontSize:"4vw"}}>
             <i class="fas fa-cart-plus" /> Create Your Advertisment
           </h1>
           <p className="lead">
             <i className="fas fa-user" /> Let's get some information to make
             your advertisment
           </p>
-          <small>* = required field</small>
+       
           <form className="form" onSubmit={e => this.onSubmit(e)}>
             <div className="form-group">
               <select
