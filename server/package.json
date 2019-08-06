@@ -9,16 +9,16 @@
     "client": "npm start --prefix client ",
     "dev": "concurrently \"npm run server  \"  \"npm run client \""
   },
-  
-  "builds":[
+  "builds": [
     {
       "src": "package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "dist" ,
-        "now-build": "npm run build"}
+      "config": {
+        "distDir": "dist",
+        "now-build": "npm run build"
+      }
     }
   ],
-
   "author": "",
   "license": "ISC",
   "dependencies": {
