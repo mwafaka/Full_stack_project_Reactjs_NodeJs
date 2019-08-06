@@ -5,7 +5,7 @@ import Landing from "./components/layout/Landing";
 import Routes from "./components/routing/Routes";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import setAuthToken from "./utils/setAuthToken";
+import { setAuthToken } from "./utils/myAxios";
 
 import { Provider } from "react-redux";
 import store from "./store";
