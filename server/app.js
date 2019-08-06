@@ -16,10 +16,10 @@ console.log(process.env.NODE_ENV);
 app.use("/uploads", express.static(__dirname + "uploads"));
 
 // Define route
-app.use("/api/users", require("./routes/api/users"));
-app.use("/api/auth", require("./routes/api/auth"));
-app.use("/api/profile", require("./routes/api/profile"));
-app.use("/api/posts", require("./routes/api/posts"));
+app.use("/users", require("./routes/api/users"));
+app.use("/auth", require("./routes/api/auth"));
+app.use("/profile", require("./routes/api/profile"));
+app.use("/posts", require("./routes/api/posts"));
 
 //Set static folder
 
