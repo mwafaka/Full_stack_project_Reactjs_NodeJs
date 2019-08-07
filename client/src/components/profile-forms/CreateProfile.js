@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
-// import AlgoliaPlaces from "algolia-places-react";
-// import Config from "../../config.json";
+import AlgoliaPlaces from "algolia-places-react";
+import Config from "../../config.json";
 import { connect } from "react-redux";
 import { createProfile } from "../../actions/profile";
 
@@ -13,8 +13,8 @@ class CreateProfile extends Component {
     latlng: "",
     status: "",
     offers: "",
-    permanents:"",
-    events:"",
+    permanents: "",
+    events: "",
     imageUrl: "",
     bio: "",
     twitter: "",
@@ -96,22 +96,22 @@ class CreateProfile extends Component {
       imageUrl,
       bio,
       twitter,
-      facebook, 
+      facebook,
       youtube,
-      instagram,
+      instagram
     } = this.state;
 
     return (
       <div style={{ marginTop: "100px" }}>
         <Fragment>
-          <h1 className="large text-primary "style={{fontSize:"4vw"}}>
+          <h1 className="large text-primary " style={{ fontSize: "4vw" }}>
             <i class="fas fa-cart-plus" /> Create Your Advertisment
           </h1>
           <p className="lead">
             <i className="fas fa-user" /> Let's get some information to make
             your advertisment
           </p>
-       
+
           <form className="form" onSubmit={e => this.onSubmit(e)}>
             <div className="form-group">
               <select
@@ -158,7 +158,7 @@ class CreateProfile extends Component {
               </small>
             </div>
             <div className="form-group">
-              {/* <AlgoliaPlaces
+              <AlgoliaPlaces
                 placeholder="Write an address here"
                 options={{
                   appId: Config.algoliaAppId,
@@ -172,7 +172,7 @@ class CreateProfile extends Component {
                     "You will receive the array of suggestions that are displayed."
                   )
                 }
-              /> */}
+              />
               <small className="form-text">
                 City & state suggested (eg. Berlin, MA)
               </small>
