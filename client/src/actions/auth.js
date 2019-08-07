@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axios } from "../utils/myAxios";
 import { setAlert } from "./alert";
 import {
   REGISTER_SUCCESS,
@@ -10,7 +10,7 @@ import {
   LOGOUT,
   CLEAR_PROFILE
 } from "./types";
-import setAuthToken from "../utils/setAuthToken";
+import { setAuthToken } from "../utils/myAxios";
 
 // Load User
 export const loadUser = () => async dispatch => {
@@ -84,7 +84,7 @@ export const login = (email, password) => async dispatch => {
     const errors = error.response;
     console.log(errors);
     if (errors) {
-    dispatch(setAlert(errors.data.errors[0].msg,"danger"))
+      dispatch(setAlert(errors.data.errors[0].msg, "danger"));
       // errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
     }
     dispatch({ type: LOGIN_FAIL });
@@ -96,4 +96,3 @@ export const logout = () => dispatch => {
   dispatch({ type: CLEAR_PROFILE });
   dispatch({ type: LOGOUT });
 };
-

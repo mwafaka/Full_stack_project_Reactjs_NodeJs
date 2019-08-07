@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
-import AlgoliaPlaces from "algolia-places-react";
-import Config from "../../config.json";
+// import AlgoliaPlaces from "algolia-places-react";
+// import Config from "../../config.json";
 import { connect } from "react-redux";
 import { createProfile } from "../../actions/profile";
 
@@ -158,7 +158,7 @@ class CreateProfile extends Component {
               </small>
             </div>
             <div className="form-group">
-              <AlgoliaPlaces
+              {/* <AlgoliaPlaces
                 placeholder="Write an address here"
                 options={{
                   appId: Config.algoliaAppId,
@@ -172,7 +172,7 @@ class CreateProfile extends Component {
                     "You will receive the array of suggestions that are displayed."
                   )
                 }
-              />
+              /> */}
               <small className="form-text">
                 City & state suggested (eg. Berlin, MA)
               </small>

@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axios } from "../utils/myAxios";
 import { setAlert } from "./alert";
 
 import {
@@ -7,8 +7,7 @@ import {
   UPDATE_PROFILE,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
-  GET_PROFILES,
-  
+  GET_PROFILES
 } from "./types";
 
 // Get current users profile
@@ -74,8 +73,6 @@ export const getProfileById = userId => async dispatch => {
     });
   }
 };
-
-
 
 // Create profile
 export const createProfile = (
@@ -176,7 +173,6 @@ export const addOffer = (formData, history) => async dispatch => {
     });
   }
 };
-
 
 // Reservation
 export const reservation = (formData, history) => async dispatch => {

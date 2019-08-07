@@ -10,13 +10,16 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  token: localStorage.getItem('token'),
+  token: localStorage.getItem("token"),
   isAuthenticated: null,
   loading: true,
   user: null
 };
 export default function(state = initialState, action) {
   const { type, payload } = action;
+
+  console.log("Auth Reducer: type, payload", type, payload);
+
   switch (type) {
     case USER_LOADED:
       return {
@@ -38,7 +41,7 @@ export default function(state = initialState, action) {
     case AUTH_ERROR:
     case LOGOUT:
     case ACCOUNT_DELETED:
-        localStorage.removeItem('token');
+      localStorage.removeItem("token");
       return {
         ...state,
         token: null,

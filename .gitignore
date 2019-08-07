@@ -1,3 +1,9 @@
+# Dependencies
 node_modules/
-config/
+
+# Config
 client/src/config.json
+.env
+
+# Builds
+client/build

@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axios } from "../utils/myAxios";
 import { setAlert } from "./alert";
 import {
   GET_POSTS,
