@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
-const db = process.env["mongoURI"];
+const db =
+  process.env.NODE_ENV !== "production"
+    ? "mongodb://localhost:27017/mern-dci"
+    : process.env["mongoURI"];
 
 const connectDB = async () => {
   try {
