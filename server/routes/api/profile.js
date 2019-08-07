@@ -13,13 +13,6 @@ const path = require("path");
 // Get current users profile
 router.get("/me", auth, async (req, res) => {
   try {
-    await Profile.findOne(
-      { user: mongoose.Types.ObjectId(req.user._id) },
-      (err, doc) => {
-        // console.log("profile", doc);
-      }
-    );
-
     const profile = await Profile.findOne({
       user: mongoose.Types.ObjectId(req.user._id)
     }).populate("user", ["name", "imageUrl"]);
