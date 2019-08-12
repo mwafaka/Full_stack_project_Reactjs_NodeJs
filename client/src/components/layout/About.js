@@ -107,11 +107,7 @@ const about = () => {
             <a href="" rel="noopener noreferrer">
               <i class="fab fa-linkedin fa-2x p-2" />
             </a>
-            <a
-              href="https://redtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="" target="_blank" rel="noopener noreferrer">
               <i class="fab fa-github fa-2x p-1" />
             </a>
           </div>
