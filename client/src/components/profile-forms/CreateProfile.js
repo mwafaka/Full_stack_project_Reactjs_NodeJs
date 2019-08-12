@@ -244,7 +244,7 @@ class CreateProfile extends Component {
               >
                 Add Social Network Links
               </button>
-              <span>Optional</span>
+              {/* <span>Optional</span> */}
             </div>
             {this.state.toggleSocialInputs && (
               <Fragment>

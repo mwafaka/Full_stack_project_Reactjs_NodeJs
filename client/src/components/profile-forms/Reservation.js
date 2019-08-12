@@ -6,29 +6,33 @@ import { reservation } from "../../actions/profile";
 
 const Reservation = ({ reservation, history }) => {
   const [formData, setFormData] = useState({
-   
     event: "",
     from: "",
     to: "",
     current: false,
-    number:"",
+    number: "",
     description: ""
   });
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const {  event, from, to, current, description,number } = formData;
+  const { event, from, to, current, description, number } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
     <div style={{ marginTop: "10%" }}>
       <Fragment>
-        <h1 className="large text-primary" style={{marginBottom:"3%", fontSize:"5.9vw"}}>Book your 
-        Place</h1>
+        <h1
+          className="large text-primary"
+          style={{ marginBottom: "", fontSize: "5vw" }}
+        >
+          Book a Table
+        </h1>
         <p className="lead text-dark ">
-        <i class="fas fa-address-card text-primary"></i> Please fill out the following spaces to reserve  
+          <i class="fas fa-address-card text-primary" /> Please fill out the
+          following spaces to reserve
         </p>
-      
+
         <form
           className="form"
           onSubmit={e => {
@@ -46,8 +50,7 @@ const Reservation = ({ reservation, history }) => {
               required
             />
           </div>
-         
-         
+
           <div className="form-group">
             <input
               type="number"
@@ -58,7 +61,7 @@ const Reservation = ({ reservation, history }) => {
             />
           </div>
           <div className="form-group">
-            <h4  className="text-primary"> Date</h4>
+            <h4 className="text-primary"> Date</h4>
             <input
               type="date"
               name="from"
@@ -70,14 +73,14 @@ const Reservation = ({ reservation, history }) => {
             <textarea
               name="description"
               cols="30"
-              rows="5"
+              rows="3"
               placeholder="Note..."
               value={description}
               onChange={e => onChange(e)}
             />
           </div>
           <input type="submit" className="btn btn-primary my-1" />
-          <a className="btn btn-light my-1" href="profiles">
+          <a className="btn btn-light my-1" href="profile/id">
             Go Back
           </a>
         </form>
@@ -87,7 +90,7 @@ const Reservation = ({ reservation, history }) => {
 };
 
 reservation.propTypes = {
-    reservation: PropTypes.func.isRequired
+  reservation: PropTypes.func.isRequired
 };
 
 export default connect(
