@@ -60,7 +60,7 @@ const about = () => {
       <div style={font}>
         <div>
           <a style={styles} href="#p1">
-            <img style={image} src={require("./img/06.jpg")} alt="Mwafak" />
+            <img style={image} src={require("./img/06.png")} alt="Mwafak" />
           </a>
           <div
             className="about-top   p-2 text-primary"
