@@ -5,8 +5,7 @@ import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 import Spinner from "../layout/Spinner";
 import DashboardActions from "./DashboardActions";
-import Experience from "./Experience";
-import Education from "./Education";
+
 const Dashboard = ({
   getCurrentProfile,
   deleteAccount,
@@ -24,20 +23,20 @@ const Dashboard = ({
     <div className="dashboard">
       <Fragment>
         <h1 className="large text-primary">
-        <i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+          <i class="fas fa-tachometer-alt" /> Dashboard
+        </h1>
         <p className="lead text-primary">
-        <i class="fas fa-utensils"/>  {' '}  {auth.user && auth.user.name}
+          <i class="fas fa-utensils" /> {auth.user && auth.user.name}
         </p>
         {profile ? (
           <Fragment>
             <DashboardActions />
-            {/* {profile && profile.about && <Experience about={profile.about} />}
-            {profile && profile.education && (
-              <Education education={profile.education} /> */}
-         
             <div className="my-2">
-              <button className="btn btn-danger" onClick={() => deleteAccount()}>
-              <i class="fas fa-user-minus"></i>  Delete 
+              <button
+                className="btn btn-danger"
+                onClick={() => deleteAccount()}
+              >
+                <i class="fas fa-user-minus" /> Delete
               </button>
             </div>
           </Fragment>

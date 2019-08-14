@@ -43,10 +43,10 @@ const ProfileSchema = new mongoose.Schema({
       date: {
         type: Date
       },
-      imageUrl:{
-        type:String
+      imageUrl: {
+        type: String
       },
-     description: {
+      description: {
         type: String
       }
     }
@@ -56,13 +56,30 @@ const ProfileSchema = new mongoose.Schema({
       title: {
         type: String
       },
-      imageUrl:{
-        type:String
+      imageUrl: {
+        type: String
       },
       date: {
         type: Date
       },
       description: {
+        type: String
+      }
+    }
+  ],
+  reservation: [
+    {
+      name: {
+        type: String
+      },
+      number: {
+        type: Number
+      },
+      date: {
+        type: Date,
+        default: Date.now
+      },
+      note: {
         type: String
       }
     }

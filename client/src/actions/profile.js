@@ -100,13 +100,13 @@ export const createProfile = (
       history.push("/dashboard");
     }
   } catch (error) {
-    const errors = error.response.data.errors;
+    const errors = error.response;
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, "danger")));
     }
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: error.response.statusText, status: error.response.status }
+      payload: { msg: error, status: error }
     });
   }
 };

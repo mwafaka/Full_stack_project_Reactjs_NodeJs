@@ -49,7 +49,7 @@ router.post("/", [auth], async (req, res) => {
     imageUrl = JSON.parse(req.body.userId) + "." + imageExtention;
 
     fs.writeFileSync(
-      path.normalize(".//client//public//images//") + imageUrl,
+      path.normalize("..//client//public//images//") + imageUrl,
       newImage.data,
       err => {
         if (err) return res.status(500).send(err);
@@ -263,6 +263,33 @@ router.put("/offer", [auth], async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
+// Add Reservation
+// Put  api/profile/reservation
+// Access Public
+
+// router.put("/reservation", async (req, res) => {
+//   const errors = validationResult(req);
+//   if (!errors.isEmpty()) {
+//     return res.status(400).json({ errors: errors.array() });
+//   }
+//   const { name, date, number, note } = req.body;
+//   const newReservation = {
+//     name,
+//     date,
+//     number,
+//     note
+//   };
+//   try {
+//     // const profile = await Profile.findOne({ user: req.user._id });
+//     // profile.reservation.unshift(newReservation);
+//     // await profile.save();
+//     // res.json(profile);
+//   } catch (error) {
+//     console.error(error.message);
+//     res.status(500).send("Server Error");
+//   }
+// });
 // Delete  offer from  profile
 // Delete  api/profile/offer/:off_id
 // Access Private

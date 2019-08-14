@@ -23,7 +23,8 @@ class CreateProfile extends Component {
     instagram: "",
     displaySocialInputs: false,
     toggleSocialInputs: false,
-    fileImage: []
+    fileImage: [],
+    fileImageName: ""
   };
 
   onChange = e => {
@@ -79,9 +80,10 @@ class CreateProfile extends Component {
   };
 
   selectImage = event => {
-    console.log("event=>", event.target.files[0]);
+    console.log("event=>", event.target.files);
     this.setState({
-      fileImage: [event.target.files[0]]
+      fileImage: [event.target.files[0]],
+      fileImageName: event.target.files[0].name
     });
   };
 
@@ -93,7 +95,8 @@ class CreateProfile extends Component {
       offers,
       permanents,
       events,
-      imageUrl,
+      fileImage,
+      fileImageName,
       bio,
       twitter,
       facebook,
@@ -128,6 +131,7 @@ class CreateProfile extends Component {
                 <option value="Chinese">Chinese</option>
                 <option value="Russian">Russian</option>
                 <option value="Italian">Italian</option>
+                <option value="German">German</option>
               </select>
               <small className="form-text">
                 Give us an idea About your Restaurant
@@ -219,7 +223,7 @@ class CreateProfile extends Component {
                 this.selectImage(event);
               }}
             >
-              <input type="file" name="imageUrl" value={imageUrl} />
+              <input type="file" name="imageUrl" />
             </form>
             <div className="form-group">
               <textarea

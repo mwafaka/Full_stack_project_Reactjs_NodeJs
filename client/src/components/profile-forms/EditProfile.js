@@ -61,16 +61,16 @@ const EditProfile = ({
   };
 
   return (
-    <div style={{ marginTop:'9%' }}>
+    <div style={{ marginTop: "9%" }}>
       <Fragment>
-        <h1 className="large text-primary" style={{fontSize:"4.5vw"}}>
+        <h1 className="large text-primary" style={{ fontSize: "4.5vw" }}>
           <i class="fas fa-user-edit" /> Edit Your Advertisment
         </h1>
         <p className="lead">
           <i className="fas fa-user" /> Let's get some information to make your
           profile stand out
         </p>
-       
+
         <form className="form" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <select name="status" value={status} onChange={e => onChange(e)}>
@@ -83,10 +83,9 @@ const EditProfile = ({
               <option value="Chinese">Chinese</option>
               <option value="Russian">Russian</option>
               <option value="Italian">Italian</option>
+              <option value="German">German</option>
             </select>
-            <small className="form-text">
-              Select
-            </small>
+            <small className="form-text">Select</small>
           </div>
           <div className="form-group">
             <input
@@ -96,9 +95,7 @@ const EditProfile = ({
               value={company}
               onChange={e => onChange(e)}
             />
-            <small className="form-text">
-              Name of your Restaurant 
-            </small>
+            <small className="form-text">Name of your Restaurant</small>
           </div>
           <div className="form-group">
             <input
@@ -108,9 +105,7 @@ const EditProfile = ({
               value={website}
               onChange={e => onChange(e)}
             />
-            <small className="form-text">
-              Restaurant  website
-            </small>
+            <small className="form-text">Restaurant website</small>
           </div>
 
           <div className="form-group">
@@ -133,7 +128,9 @@ const EditProfile = ({
               value={bio}
               onChange={e => onChange(e)}
             />
-            <small className="form-text">Tell us a little about Restaurant </small>
+            <small className="form-text">
+              Tell us a little about Restaurant{" "}
+            </small>
           </div>
 
           <div className="my-2">
@@ -142,7 +139,7 @@ const EditProfile = ({
               type="button"
               className="btn btn-light"
             >
-               Social Network Links
+              Social Network Links
             </button>
             <span>Optional</span>
           </div>
