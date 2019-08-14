@@ -9,30 +9,30 @@ const AddOffer = ({ addOffer, history }) => {
     title: "",
     date: "",
     description: "",
-    imageUrl:"",
-    fileImage:[]
+    imageUrl: "",
+    fileImage: []
   });
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const {title,date,imageUrl, description } = formData;
+  const { title, date, imageUrl, description } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const selectImage = e => {
-      console.log("event=>", e.target.files[0]);
-     setFormData({
-        fileImage: [e.target.files[0]]
-      });
-    };
+  const selectImage = e => {
+    console.log("event=>", e.target.files[0]);
+    setFormData({
+      fileImage: [e.target.files[0]]
+    });
+  };
 
   return (
     <div style={{ marginTop: "100px" }}>
       <Fragment>
-        <h1 className="large text-primary">Add  Offer</h1>
+        <h1 className="large ">Add Offer</h1>
         <p className="lead">
-        <i class="fas fa-plus-square"></i> Add Currentl Offer
+          <i class="fas fa-plus-square" /> Add Currentl Offer
         </p>
-      
+
         <form
           className="form"
           onSubmit={e => {
@@ -50,7 +50,7 @@ const AddOffer = ({ addOffer, history }) => {
               required
             />
           </div>
-         
+
           <div className="form-group">
             <h4> Date</h4>
             <input
@@ -61,13 +61,13 @@ const AddOffer = ({ addOffer, history }) => {
             />
           </div>
           <form
-              enctype="multipart/form-data"
-              onChange={event => {
+            enctype="multipart/form-data"
+            onChange={event => {
               selectImage(event);
-              }}
-            >
-              <input type="file" name="imageUrl" value={imageUrl} />
-            </form>
+            }}
+          >
+            <input type="file" name="imageUrl" value={imageUrl} />
+          </form>
           <div className="form-group">
             <textarea
               name="description"
@@ -96,7 +96,3 @@ export default connect(
   null,
   { addOffer }
 )(withRouter(AddOffer));
-
-
-
-

@@ -7,36 +7,30 @@ import { addEvent } from "../../actions/profile";
 const AddEvent = ({ addEvent, history }) => {
   const [formData, setFormData] = useState({
     title: "",
-    imageUrl:"",
+    imageUrl: "",
     description: "",
-    fileImage:[]
+    fileImage: []
   });
   // const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const {
-    title,
-    imageUrl,
-    description
-  } = formData;
+  const { title, imageUrl, description } = formData;
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-   const selectImage = e => {
-      console.log("event=>", e.target.files[0]);
-     setFormData({
-        fileImage: [e.target.files[0]]
-      });
-    };
+  const selectImage = e => {
+    console.log("event=>", e.target.files[0]);
+    setFormData({
+      fileImage: [e.target.files[0]]
+    });
+  };
   return (
     <div style={{ marginTop: "100px" }}>
       <Fragment>
-        <h1 className="large text-primary">Add Events
-    </h1>
+        <h1 className="large ">Add Events</h1>
         <p className="lead">
-        <i class="fas fa-plus-square"></i> Add any 
-          Event 
+          <i class="fas fa-plus-square" /> Add any Event
         </p>
-        
+
         <form
           className="form"
           onSubmit={e => {
@@ -51,17 +45,16 @@ const AddEvent = ({ addEvent, history }) => {
               name="title"
               value={title}
               onChange={e => onChange(e)}
-              
             />
           </div>
           <form
-              enctype="multipart/form-data"
-              onChange={event => {
+            enctype="multipart/form-data"
+            onChange={event => {
               selectImage(event);
-              }}
-            >
-              <input type="file" name="imageUrl" value={imageUrl} />
-            </form>
+            }}
+          >
+            <input type="file" name="imageUrl" value={imageUrl} />
+          </form>
           <div className="form-group">
             <textarea
               name="description"

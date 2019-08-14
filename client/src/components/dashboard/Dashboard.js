@@ -22,8 +22,8 @@ const Dashboard = ({
   ) : (
     <div className="dashboard">
       <Fragment>
-        <h1 className="large text-primary">
-          <i class="fas fa-tachometer-alt" /> Dashboard
+        <h1 className="large">
+          <i class="fas fa-edit" /> your Profile
         </h1>
         <p className="lead text-primary">
           <i class="fas fa-utensils" /> {auth.user && auth.user.name}
@@ -36,7 +36,7 @@ const Dashboard = ({
                 className="btn btn-danger"
                 onClick={() => deleteAccount()}
               >
-                <i class="fas fa-user-minus" /> Delete
+                <i class="fas fa-user-minus" /> Delete your Profile
               </button>
             </div>
           </Fragment>

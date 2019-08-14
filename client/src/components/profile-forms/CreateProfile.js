@@ -107,7 +107,7 @@ class CreateProfile extends Component {
     return (
       <div style={{ marginTop: "100px" }}>
         <Fragment>
-          <h1 className="large text-primary " style={{ fontSize: "4vw" }}>
+          <h1 className="large " style={{ fontSize: "4vw" }}>
             <i class="fas fa-cart-plus" /> Create Your Advertisment
           </h1>
           <p className="lead">
