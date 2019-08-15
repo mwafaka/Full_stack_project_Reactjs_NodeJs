@@ -2,6 +2,8 @@
 node_modules/
 
 # Config
+client/src/config.json
+.env
 
 # Builds
 client/build
