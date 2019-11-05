@@ -23,7 +23,7 @@
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "leaflet": "^1.5.1",
-    "mongoose": "^5.5.12",
+    "mongoose": "^5.7.5",
     "n": "^4.1.0",
     "path": "^0.12.7",
     "react-leaflet": "^2.4.0",
